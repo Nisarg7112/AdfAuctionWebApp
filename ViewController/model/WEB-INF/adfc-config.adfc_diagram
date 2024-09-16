@@ -1,0 +1,35 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">welcome</property>
+      <property
+         name="x">574.5</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>welcome&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">306.3672</property>
+      <property
+         name="page">/welcome.jspx</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <View
+      id="View3">
+      <property
+         name="activityId">Wel</property>
+      <property
+         name="x">206.5</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>Wel&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">298.3672</property>
+      <property
+         name="page">/Wel.jsf</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+</SDM>
