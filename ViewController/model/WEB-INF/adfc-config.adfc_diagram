@@ -3,33 +3,162 @@
    <OverallProperties
       id="OverallProperties1"/>
    <View
-      id="View2">
+      id="View3">
       <property
-         name="activityId">welcome</property>
+         name="activityId">Home</property>
       <property
-         name="x">574.5</property>
+         name="x">124.5</property>
       <property
-         name="description">&lt;html>&lt;p>&lt;b>welcome&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+         name="description">&lt;html>&lt;p>&lt;b>Home&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">306.3672</property>
+         name="y">162.36719</property>
       <property
-         name="page">/welcome.jspx</property>
+         name="page">/Home.jsf</property>
       <property
          name="exceptionHandler">false</property>
    </View>
    <View
-      id="View3">
+      id="View4">
       <property
-         name="activityId">Wel</property>
+         name="activityId">ViewAuc</property>
       <property
-         name="x">206.5</property>
+         name="x">500.5</property>
       <property
-         name="description">&lt;html>&lt;p>&lt;b>Wel&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+         name="description">&lt;html>&lt;p>&lt;b>ViewAuc&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">298.3672</property>
+         name="y">299.3672</property>
       <property
-         name="page">/Wel.jsf</property>
+         name="page">/ViewAuc.jsf</property>
       <property
          name="exceptionHandler">false</property>
    </View>
+   <View
+      id="View5">
+      <property
+         name="activityId">PersonalInfo</property>
+      <property
+         name="x">461.97363</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>PersonalInfo&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">101.234375</property>
+      <property
+         name="page">/PersonalInfo.jsf</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <View
+      id="View6">
+      <property
+         name="activityId">BidHistory</property>
+      <property
+         name="x">132.5</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>BidHistory&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">374.23438</property>
+      <property
+         name="page">/BidHistory.jsf</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <View
+      id="View7">
+      <property
+         name="activityId">CreateAuc</property>
+      <property
+         name="x">373.5</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>CreateAuc&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">432.3672</property>
+      <property
+         name="page">/CreateAuc.jsf</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <View
+      id="View8">
+      <property
+         name="activityId">AuctionHistory</property>
+      <property
+         name="x">249.0459</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>AuctionHistory&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">63.101562</property>
+      <property
+         name="page">/AuctionHistory.jsf</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <WildcardControlFlowRule
+      id="WildcardControlFlowRule9">
+      <property
+         name="activityId">*</property>
+      <property
+         name="x">313.0</property>
+      <property
+         name="y">228.86719</property>
+   </WildcardControlFlowRule>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase10"
+      from="WildcardControlFlowRule9"
+      to="View5">
+      <property
+         name="fromOutcome">personalinfo</property>
+      <property
+         name="sdm:polyPoints">R45,349.0,225.80078,461.97363,155.16797,B50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase11"
+      from="WildcardControlFlowRule9"
+      to="View4">
+      <property
+         name="fromOutcome">viewauc</property>
+      <property
+         name="sdm:polyPoints">R55,349.0,232.80078,459.5,299.30078,L50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase12"
+      from="WildcardControlFlowRule9"
+      to="View7">
+      <property
+         name="fromOutcome">createauc</property>
+      <property
+         name="sdm:polyPoints">B50,313.0,271.80078,373.5,378.30078,T50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase13"
+      from="WildcardControlFlowRule9"
+      to="View6">
+      <property
+         name="fromOutcome">bidhistory</property>
+      <property
+         name="sdm:polyPoints">L50,277.0,229.30078,132.5,320.16797,T50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase14"
+      from="WildcardControlFlowRule9"
+      to="View8">
+      <property
+         name="fromOutcome">auchistory</property>
+      <property
+         name="sdm:polyPoints">T50,313.0,186.80078,249.0459,117.03516,B50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase15"
+      from="WildcardControlFlowRule9"
+      to="View3">
+      <property
+         name="fromOutcome">home</property>
+      <property
+         name="sdm:polyPoints">L38,R64</property>
+   </ControlFlowCase>
 </SDM>
