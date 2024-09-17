@@ -6,4 +6,9 @@
   <view id="Wel">
     <page>/Wel.jsf</page>
   </view>
+  <managed-bean id="__1">
+    <managed-bean-name>SingupBean</managed-bean-name>
+    <managed-bean-class>view.SgnBean</managed-bean-class>
+    <managed-bean-scope>view</managed-bean-scope>
+  </managed-bean>
 </adfc-config>

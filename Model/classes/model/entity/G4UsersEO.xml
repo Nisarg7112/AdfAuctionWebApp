@@ -12,13 +12,13 @@
   BindingStyle="OracleName">
   <Attribute
     Name="Userid"
-    IsNotNull="true"
     ColumnName="USERID"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="G4_USERS"
-    PrimaryKey="true"/>
+    PrimaryKey="true"
+    RetrievedOnInsert="true"/>
   <Attribute
     Name="Username"
     IsNotNull="true"

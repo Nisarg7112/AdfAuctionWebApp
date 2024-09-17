@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.9.14" id="DataBindings"
+             SeparateXMLFiles="false" Package="view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/signup.jsf" usageId="view_signupPageDef"/>
+    <page path="/WEB-INF/signup-task-flow.xml#signup-task-flow@CreateInsert"
+          usageId="view_signup_task_flow_signup_task_flow_CreateInsertPageDef"/>
+    <page path="/signup.jsff" usageId="view_signupPageDef1"/>
+    <page path="/singup.jsf" usageId="view_singupPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="view_signupPageDef" path="view.pageDefs.signupPageDef"/>
+    <page id="view_signup_task_flow_signup_task_flow_CreateInsertPageDef"
+          path="view.pageDefs.signup_task_flow_signup_task_flow_CreateInsertPageDef"/>
+    <page id="view_signupPageDef1" path="view.pageDefs.signupPageDef1"/>
+    <page id="view_singupPageDef" path="view.pageDefs.singupPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="AppModuleDataControl1" Package="model.entity"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="AppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>
