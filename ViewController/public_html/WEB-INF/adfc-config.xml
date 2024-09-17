@@ -6,6 +6,9 @@
   <view id="ViewAuc">
     <page>/ViewAuc.jsf</page>
   </view>
+  <view id="singup">
+    <page>/singup.jsf</page>
+  </view>
   <managed-bean id="__1">
     <managed-bean-name>SingupBean</managed-bean-name>
     <managed-bean-class>view.SgnBean</managed-bean-class>
@@ -48,6 +51,10 @@
     <control-flow-case id="__7">
       <from-outcome>home</from-outcome>
       <to-activity-id>Home</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__9">
+      <from-outcome>singup</from-outcome>
+      <to-activity-id>singup</to-activity-id>
     </control-flow-case>
   </control-flow-rule>
 </adfc-config>

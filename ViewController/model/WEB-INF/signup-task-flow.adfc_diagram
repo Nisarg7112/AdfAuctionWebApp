@@ -13,7 +13,7 @@
       <property
          name="description">&lt;html>&lt;p>&lt;b>CreateInsert&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
       <property
-         name="y">421.16797</property>
+         name="y">421.03516</property>
       <property
          name="exceptionHandler">false</property>
    </MethodCall>
@@ -42,6 +42,6 @@
       <property
          name="fromOutcome">CreateInsert</property>
       <property
-         name="sdm:polyPoints">R50,267.40234,421.10156,948.0,349.80078,L50</property>
+         name="sdm:polyPoints">R50,267.40234,420.96875,948.0,349.80078,L50</property>
    </ControlFlowCase>
 </SDM>
