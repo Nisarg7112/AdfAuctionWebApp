@@ -11,7 +11,7 @@
     <page path="/WEB-INF/signup-task-flow.xml#signup-task-flow@CreateInsert"
           usageId="view_signup_task_flow_signup_task_flow_CreateInsertPageDef"/>
     <page path="/signup.jsff" usageId="view_signupPageDef1"/>
-    <page path="/singup.jsf" usageId="view_singupPageDef"/>
+    <page path="/signup.jsf" usageId="view_singupPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_signupPageDef" path="view.pageDefs.signupPageDef"/>

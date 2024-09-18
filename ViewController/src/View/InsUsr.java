@@ -1,5 +1,7 @@
 package View;
 
+import java.io.IOException;
+
 import javax.faces.application.FacesMessage;
 
 import javax.faces.context.FacesContext;
@@ -27,6 +29,11 @@ public class InsUsr {
         FacesContext con = FacesContext.getCurrentInstance();
         FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Added", "");
         con.addMessage("", message);
-        return null;
+        try {
+            con.getExternalContext().redirect("/ViewController/faces/login");
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+        return "login";
     }
 }

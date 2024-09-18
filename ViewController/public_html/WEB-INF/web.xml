@@ -28,7 +28,7 @@
     <servlet-class>oracle.adf.share.security.authentication.AuthenticationServlet</servlet-class>
     <init-param>
       <param-name>success_url</param-name>
-      <param-value>/faces/Wel.jsf</param-value>
+      <param-value>/faces/Home.jsf</param-value>
     </init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>
@@ -179,7 +179,7 @@
     <listener-class>oracle.bc4j.mbean.BC4JConfigLifeCycleCallBack</listener-class>
   </listener>
   <welcome-file-list>
-    <welcome-file>/faces/Wel.jsf</welcome-file>
+    <welcome-file>/faces/Home.jsf</welcome-file>
     <welcome-file>/welcome.jspx</welcome-file>
   </welcome-file-list>
   <login-config>
