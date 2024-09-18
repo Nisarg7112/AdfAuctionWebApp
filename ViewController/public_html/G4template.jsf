@@ -45,7 +45,7 @@
                         <af:menuBar id="pt_mb1">
                             <af:commandMenuItem text="Home" id="pt_cmi2" action="home"/>
                             <af:menu text="User" id="pt_m3">
-                                <af:commandMenuItem text="Personal Information" id="pt_cmi3" action="signup"/>
+                                <af:commandMenuItem text="Personal Information" id="pt_cmi3" action="personalinfo"/>
                                 <af:commandMenuItem text="Bid History" id="pt_cmi5" action="bidhistory"/>
                                 <af:commandMenuItem text="Auction History" id="pt_cmi6" action="auchistory"/>
                             </af:menu>

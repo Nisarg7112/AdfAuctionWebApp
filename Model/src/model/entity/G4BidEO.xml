@@ -12,13 +12,13 @@
   BindingStyle="OracleName">
   <Attribute
     Name="Bidid"
-    IsNotNull="true"
     ColumnName="BIDID"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="G4_BID"
-    PrimaryKey="true"/>
+    PrimaryKey="true"
+    RetrievedOnInsert="true"/>
   <Attribute
     Name="Bidderid"
     IsNotNull="true"

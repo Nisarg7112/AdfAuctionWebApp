@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="CreateAuctionFormPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="G4AuctionVO1" RangeSize="25" DataControl="AppModuleDataControl1" id="G4AuctionVO1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="G4AuctionVO1Iterator" id="Itemname">
+      <AttrNames>
+        <Item Value="Itemname"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G4AuctionVO1Iterator" id="Buyerid">
+      <AttrNames>
+        <Item Value="Buyerid"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G4AuctionVO1Iterator" id="Auctionstate">
+      <AttrNames>
+        <Item Value="Auctionstate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G4AuctionVO1Iterator" id="Creatorid">
+      <AttrNames>
+        <Item Value="Creatorid"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G4AuctionVO1Iterator" id="Categoryid">
+      <AttrNames>
+        <Item Value="Categoryid"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G4AuctionVO1Iterator" id="Starttime">
+      <AttrNames>
+        <Item Value="Starttime"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G4AuctionVO1Iterator" id="Endtime">
+      <AttrNames>
+        <Item Value="Endtime"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G4AuctionVO1Iterator" id="Createdon">
+      <AttrNames>
+        <Item Value="Createdon"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G4AuctionVO1Iterator" id="Image">
+      <AttrNames>
+        <Item Value="Image"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G4AuctionVO1Iterator" id="Startprice">
+      <AttrNames>
+        <Item Value="Startprice"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G4AuctionVO1Iterator" id="Currentprice">
+      <AttrNames>
+        <Item Value="Currentprice"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G4AuctionVO1Iterator" id="Description">
+      <AttrNames>
+        <Item Value="Description"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+  </bindings>
+</pageDefinition>
