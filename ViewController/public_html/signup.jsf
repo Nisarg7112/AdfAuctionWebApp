@@ -15,6 +15,7 @@
                         <!-- Content -->
                         <af:panelFormLayout id="pfl1">
                             <af:region value="#{bindings.signuptaskflow1.regionModel}" id="r1"/>
+                            test
                             <f:facet name="footer"/>
                         </af:panelFormLayout>
                     </af:gridCell>
