@@ -12,13 +12,13 @@
   BindingStyle="OracleName">
   <Attribute
     Name="Categoryid"
-    IsNotNull="true"
     ColumnName="CATEGORYID"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="G4_CATEGORY"
-    PrimaryKey="true"/>
+    PrimaryKey="true"
+    RetrievedOnInsert="true"/>
   <Attribute
     Name="Categoryname"
     IsNotNull="true"

@@ -61,7 +61,7 @@
   </control-flow-rule>
   <managed-bean id="__10">
     <managed-bean-name>SingupBean</managed-bean-name>
-    <managed-bean-class>view.SgnBean</managed-bean-class>
+    <managed-bean-class>View.SgnBean</managed-bean-class>
     <managed-bean-scope>view</managed-bean-scope>
   </managed-bean>
 </adfc-config>

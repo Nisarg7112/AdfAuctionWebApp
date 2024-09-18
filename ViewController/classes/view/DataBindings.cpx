@@ -11,7 +11,12 @@
     <page path="/WEB-INF/signup-task-flow.xml#signup-task-flow@CreateInsert"
           usageId="view_signup_task_flow_signup_task_flow_CreateInsertPageDef"/>
     <page path="/signup.jsff" usageId="view_signupPageDef1"/>
-    <page path="/signup.jsf" usageId="view_singupPageDef"/>
+    <page path="/singup.jsf" usageId="view_singupPageDef"/>
+    <page path="/CreateAuc.jsf" usageId="view_CreateAucPageDef"/>
+    <page path="/createAuction.jsff" usageId="view_createAuctionPageDef"/>
+    <page path="/CreateAuctionForm.jsff" usageId="view_CreateAuctionFormPageDef"/>
+    <page path="/WEB-INF/createAuctionTF.xml#createAuctionTF@CreateInsert"
+          usageId="view_createAuctionTF_createAuctionTF_CreateInsertPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_signupPageDef" path="view.pageDefs.signupPageDef"/>
@@ -19,6 +24,11 @@
           path="view.pageDefs.signup_task_flow_signup_task_flow_CreateInsertPageDef"/>
     <page id="view_signupPageDef1" path="view.pageDefs.signupPageDef1"/>
     <page id="view_singupPageDef" path="view.pageDefs.singupPageDef"/>
+    <page id="view_CreateAucPageDef" path="view.pageDefs.CreateAucPageDef"/>
+    <page id="view_createAuctionPageDef" path="view.pageDefs.createAuctionPageDef"/>
+    <page id="view_CreateAuctionFormPageDef" path="view.pageDefs.CreateAuctionFormPageDef"/>
+    <page id="view_createAuctionTF_createAuctionTF_CreateInsertPageDef"
+          path="view.pageDefs.createAuctionTF_createAuctionTF_CreateInsertPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl1" Package="model.entity"

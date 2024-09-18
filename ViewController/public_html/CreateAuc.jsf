@@ -2,9 +2,12 @@
 <!DOCTYPE html>
 <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
     <af:document title="CreateAuc.jsf" id="d1">
+        <af:messages id="m1"/>
         <af:form id="f1">
             <af:pageTemplate viewId="/G4template.jsf" id="pt1">
-                <f:facet name="body"/>
+                <f:facet name="body">
+                    <af:region value="#{bindings.createAuctionTF1.regionModel}" id="r1"/>
+                </f:facet>
                 <f:attribute name="pageTitle" value="Create Auction"/>
             </af:pageTemplate>
         </af:form>
