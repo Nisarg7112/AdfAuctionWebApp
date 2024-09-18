@@ -20,6 +20,14 @@
                   id="it3">
       <f:validator binding="#{bindings.Password.validator}"/>
     </af:inputText>
+    
+    <af:inputText value="#{InsertUser.passwordCopy}" label="Confirm Password"
+                  required="#{bindings.Password.hints.mandatory}" columns="#{bindings.Password.hints.displayWidth}"
+                  maximumLength="#{bindings.Password.hints.precision}" shortDesc="#{bindings.Password.hints.tooltip}"
+                  id="it4">
+      <f:validator binding="#{bindings.Password.validator}"/>
+      </af:inputText>
+    
     <af:button text="Commit" disabled="#{!bindings.Commit.enabled}"
                id="b1" action="#{InsertUser.commitAction}"/>
   </af:panelFormLayout>

@@ -34,6 +34,7 @@
     <control-flow-rule id="__4">
       <from-activity-id>SignupFrag</from-activity-id>
       <control-flow-case id="__5">
+        <from-outcome>login</from-outcome>
         <to-activity-id>taskFlowReturn1</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
