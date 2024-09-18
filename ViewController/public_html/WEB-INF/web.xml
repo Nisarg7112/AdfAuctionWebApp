@@ -28,7 +28,7 @@
     <servlet-class>oracle.adf.share.security.authentication.AuthenticationServlet</servlet-class>
     <init-param>
       <param-name>success_url</param-name>
-      <param-value>/faces/Wel.jsf</param-value>
+      <param-value>/faces/Home.jsf</param-value>
     </init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>
@@ -81,10 +81,6 @@
     <filter-class>org.apache.myfaces.trinidad.webapp.TrinidadFilter</filter-class>
   </filter>
   <filter>
-    <filter-name>ServletADFFilter</filter-name>
-    <filter-class>oracle.adf.share.http.ServletADFFilter</filter-class>
-  </filter>
-  <filter>
     <filter-name>adfBindings</filter-name>
     <filter-class>oracle.adf.model.servlet.ADFBindingFilter</filter-class>
   </filter>
@@ -103,14 +99,14 @@
     <dispatcher>ERROR</dispatcher>
   </filter-mapping>
   <filter-mapping>
-    <filter-name>ServletADFFilter</filter-name>
-    <servlet-name>Faces Servlet</servlet-name>
+    <filter-name>adfBindings</filter-name>
+    <servlet-name>adfAuthentication</servlet-name>
     <dispatcher>FORWARD</dispatcher>
     <dispatcher>REQUEST</dispatcher>
   </filter-mapping>
   <filter-mapping>
     <filter-name>adfBindings</filter-name>
-    <servlet-name>adfAuthentication</servlet-name>
+    <servlet-name>Faces Servlet</servlet-name>
     <dispatcher>FORWARD</dispatcher>
     <dispatcher>REQUEST</dispatcher>
   </filter-mapping>
@@ -179,8 +175,11 @@
   <listener>
     <listener-class>oracle.adf.mbean.share.connection.ADFConnectionLifeCycleCallBack</listener-class>
   </listener>
+  <listener>
+    <listener-class>oracle.bc4j.mbean.BC4JConfigLifeCycleCallBack</listener-class>
+  </listener>
   <welcome-file-list>
-    <welcome-file>/faces/Wel.jsf</welcome-file>
+    <welcome-file>/faces/Home.jsf</welcome-file>
     <welcome-file>/welcome.jspx</welcome-file>
   </welcome-file-list>
   <login-config>

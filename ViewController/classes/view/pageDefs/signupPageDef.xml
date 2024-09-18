@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="signupPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="G4UsersVO1" RangeSize="25" DataControl="AppModuleDataControl1" id="G4UsersVO1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="G4UsersVO1Iterator" id="Username">
+      <AttrNames>
+        <Item Value="Username"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G4UsersVO1Iterator" id="Email">
+      <AttrNames>
+        <Item Value="Email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G4UsersVO1Iterator" id="Password">
+      <AttrNames>
+        <Item Value="Password"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="G4UsersVO1Iterator" id="CreateInsert" InstanceName="AppModuleDataControl1.G4UsersVO1"
+            DataControl="AppModuleDataControl1" RequiresUpdateModel="true" Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

@@ -12,13 +12,13 @@
   BindingStyle="OracleName">
   <Attribute
     Name="Notificationid"
-    IsNotNull="true"
     ColumnName="NOTIFICATIONID"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="G4_NOTIFICATION"
-    PrimaryKey="true"/>
+    PrimaryKey="true"
+    RetrievedOnInsert="true"/>
   <Attribute
     Name="Message"
     Precision="500"

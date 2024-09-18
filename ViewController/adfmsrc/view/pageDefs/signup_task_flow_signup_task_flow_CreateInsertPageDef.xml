@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14"
+                id="signup_task_flow_signup_task_flow_CreateInsertPageDef" Package="view.pageDefs"
+                SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="G4UsersVO1" RangeSize="25" DataControl="AppModuleDataControl1" id="G4UsersVO1Iterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="G4UsersVO1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

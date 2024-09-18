@@ -89,6 +89,7 @@
       <list n="technologyScope">
          <string v="ADF_FACES"/>
          <string v="ADFc"/>
+         <string v="ADFm"/>
          <string v="JSF"/>
          <string v="JSP"/>
          <string v="Java"/>
@@ -190,6 +191,19 @@
          </list>
       </hash>
    </hash>
+   <hash n="oracle.jdeveloper.runner.RunConfigurations">
+      <hash n="runConfigurationDefinitions">
+         <hash n="Default">
+            <value n="custom" v="false"/>
+            <value n="name" v="Default"/>
+            <hash n="oracle.adfdt.controller.adfc.source.runner.AdfcRunnerLaunchSettings">
+               <value n="unboundedTaskFlow" v="true"/>
+               <value n="viewActivityId" v="Home"/>
+            </hash>
+            <url n="targetURL" path="public_html/WEB-INF/adfc-config.xml"/>
+         </hash>
+      </hash>
+   </hash>
    <hash n="oracle.jdevimpl.config.JProjectLibraries">
       <list n="exportedReferences">
          <hash>
@@ -276,6 +290,38 @@
             <value n="id" v="Oracle JEWT"/>
             <value n="isJDK" v="false"/>
          </hash>
+         <hash>
+            <value n="id" v="ADF Faces Databinding Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Oracle XML Parser v2"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="JDeveloper Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="ADF Model Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="BC4J Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Oracle JDBC"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Connection Manager"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="BC4J Oracle Domains"/>
+            <value n="isJDK" v="false"/>
+         </hash>
       </list>
       <list n="libraryReferences">
          <hash>
@@ -360,6 +406,38 @@
          </hash>
          <hash>
             <value n="id" v="Oracle JEWT"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="ADF Faces Databinding Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Oracle XML Parser v2"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="JDeveloper Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="ADF Model Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="BC4J Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Oracle JDBC"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Connection Manager"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="BC4J Oracle Domains"/>
             <value n="isJDK" v="false"/>
          </hash>
       </list>

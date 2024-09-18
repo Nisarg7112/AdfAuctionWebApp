@@ -12,13 +12,20 @@
   BindingStyle="OracleName">
   <Attribute
     Name="Auctionid"
-    IsNotNull="true"
     ColumnName="AUCTIONID"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="G4_AUCTION"
-    PrimaryKey="true"/>
+    PrimaryKey="true"
+    RetrievedOnInsert="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.entity.G4AuctionEO.Auctionid_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="Itemname"
     IsNotNull="true"
@@ -31,6 +38,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="50"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.entity.G4AuctionEO.Itemname_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Buyerid"
@@ -38,7 +51,14 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="G4_AUCTION"/>
+    TableName="G4_AUCTION">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.entity.G4AuctionEO.Buyerid_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="Auctionstate"
     IsNotNull="true"
@@ -235,4 +255,8 @@
       <Item Value="model.entity.G4AuctionEO.Creatorid"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </Entity>
