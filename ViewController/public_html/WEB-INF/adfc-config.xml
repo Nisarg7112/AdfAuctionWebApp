@@ -6,8 +6,8 @@
   <view id="ViewAuc">
     <page>/ViewAuc.jsf</page>
   </view>
-  <view id="singup">
-    <page>/singup.jsf</page>
+  <view id="signup">
+    <page>/signup.jsf</page>
   </view>
   <view id="PersonalInfo">
     <page>/PersonalInfo.jsf</page>
@@ -20,6 +20,9 @@
   </view>
   <view id="AuctionHistory">
     <page>/AuctionHistory.jsf</page>
+  </view>
+  <view id="login">
+    <page>/login.jsf</page>
   </view>
   <control-flow-rule id="__1">
     <from-activity-id>*</from-activity-id>
@@ -48,8 +51,12 @@
       <to-activity-id>Home</to-activity-id>
     </control-flow-case>
     <control-flow-case id="__9">
-      <from-outcome>singup</from-outcome>
-      <to-activity-id>singup</to-activity-id>
+      <from-outcome>signup</from-outcome>
+      <to-activity-id>signup</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__8">
+      <from-outcome>login</from-outcome>
+      <to-activity-id>login</to-activity-id>
     </control-flow-case>
   </control-flow-rule>
   <managed-bean id="__10">

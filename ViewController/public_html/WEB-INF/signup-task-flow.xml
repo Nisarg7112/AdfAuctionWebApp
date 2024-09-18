@@ -19,11 +19,22 @@
     <view id="SignupFrag">
       <page>/signup.jsff</page>
     </view>
+    <task-flow-return id="taskFlowReturn1">
+      <outcome>
+        <name>taskFlowReturn1</name>
+      </outcome>
+    </task-flow-return>
     <control-flow-rule id="__1">
       <from-activity-id>CreateInsert</from-activity-id>
       <control-flow-case id="__2">
         <from-outcome>CreateInsert</from-outcome>
         <to-activity-id>SignupFrag</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__4">
+      <from-activity-id>SignupFrag</from-activity-id>
+      <control-flow-case id="__5">
+        <to-activity-id>taskFlowReturn1</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <use-page-fragments/>

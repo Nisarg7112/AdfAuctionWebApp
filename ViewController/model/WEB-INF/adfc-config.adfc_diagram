@@ -115,7 +115,7 @@
       <property
          name="fromsrcid">__1</property>
       <property
-         name="sdm:polyPoints">L61,14.0,274.16797,14.5,480.30078,L50</property>
+         name="sdm:polyPoints">L66,1.993804,277.26868,12.949654,480.30078,L50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -129,7 +129,7 @@
       <property
          name="fromsrcid">__1</property>
       <property
-         name="sdm:polyPoints">L39,14.0,260.16797,27.045898,174.30078,L50</property>
+         name="sdm:polyPoints">L18,12.44964,246.96649,25.495531,174.30077,L50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -143,7 +143,7 @@
       <property
          name="fromsrcid">__1</property>
       <property
-         name="sdm:polyPoints">R55,86.0,270.66797,104.5,378.30078,L50</property>
+         name="sdm:polyPoints">R58,87.55036,272.2183,145.5,322.75043,T50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -157,7 +157,7 @@
       <property
          name="fromsrcid">__1</property>
       <property
-         name="sdm:polyPoints">B50,50.0,309.66797,60.973633,324.30078,T50</property>
+         name="sdm:polyPoints">L82,12.44964,287.3694,18.423265,378.30078,L50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -171,7 +171,7 @@
       <property
          name="fromsrcid">__1</property>
       <property
-         name="sdm:polyPoints">R45,90.03075,263.66797,104.5,276.30078,L50</property>
+         name="sdm:polyPoints">R42,91.414444,262.11758,102.94964,276.30078,L50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -185,20 +185,20 @@
       <property
          name="fromsrcid">__1</property>
       <property
-         name="sdm:polyPoints">T50,50.0,224.66797,145.5,228.30078,B50</property>
+         name="sdm:polyPoints">T50,50.0,223.11758,145.5,229.85112,B50</property>
    </ControlFlowCase>
    <View
       id="View35">
       <property
-         name="activityId">singup</property>
+         name="activityId">signup</property>
       <property
-         name="x">-91.5</property>
+         name="x">-187.5</property>
       <property
-         name="description">&lt;html>&lt;p>&lt;b>singup&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+         name="description">&lt;html>&lt;p>&lt;b>signup&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">279.23438</property>
+         name="y">236.10156</property>
       <property
-         name="page">/singup.jsf</property>
+         name="page">/signup.jsf</property>
       <property
          name="exceptionHandler">false</property>
    </View>
@@ -208,8 +208,33 @@
       from="WildcardControlFlowRule22"
       to="View35">
       <property
-         name="fromOutcome">singup</property>
+         name="fromOutcome">signup</property>
       <property
-         name="sdm:polyPoints">L50,10.168688,267.16797,-50.5,279.16797,R50</property>
+         name="sdm:polyPoints">L34,6.075901,257.06723,-144.94965,236.03519,R50</property>
+   </ControlFlowCase>
+   <View
+      id="View17">
+      <property
+         name="activityId">login</property>
+      <property
+         name="x">-216.5</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>login&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">340.96875</property>
+      <property
+         name="page">/login.jsf</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase18"
+      from="WildcardControlFlowRule22"
+      to="View17">
+      <property
+         name="fromOutcome">login</property>
+      <property
+         name="sdm:polyPoints">L50,-4.0316124,267.16794,-173.94965,340.90237,R50</property>
    </ControlFlowCase>
 </SDM>
