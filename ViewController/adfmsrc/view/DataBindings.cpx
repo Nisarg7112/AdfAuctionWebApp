@@ -17,6 +17,8 @@
     <page path="/CreateAuctionForm.jsff" usageId="view_CreateAuctionFormPageDef"/>
     <page path="/WEB-INF/createAuctionTF.xml#createAuctionTF@CreateInsert"
           usageId="view_createAuctionTF_createAuctionTF_CreateInsertPageDef"/>
+    <page path="/Home.jsf" usageId="view_HomePageDef"/>
+    <page path="/G4template.jsf" usageId="view_G4templatePageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_signupPageDef" path="view.pageDefs.signupPageDef"/>
@@ -29,6 +31,8 @@
     <page id="view_CreateAuctionFormPageDef" path="view.pageDefs.CreateAuctionFormPageDef"/>
     <page id="view_createAuctionTF_createAuctionTF_CreateInsertPageDef"
           path="view.pageDefs.createAuctionTF_createAuctionTF_CreateInsertPageDef"/>
+    <page id="view_HomePageDef" path="view.pageDefs.HomePageDef"/>
+    <page id="view_G4templatePageDef" path="view.pageDefs.G4templatePageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl1" Package="model.entity"
