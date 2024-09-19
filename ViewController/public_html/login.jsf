@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
         xmlns:h="http://java.sun.com/jsf/html">
-    <af:document title="login.jsf" id="d1">
+    <af:document title="login" id="d1">
         <af:panelGridLayout id="pgl1">
             <af:gridRow height="50px" id="gr2">
                 <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">

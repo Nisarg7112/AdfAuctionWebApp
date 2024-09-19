@@ -115,7 +115,7 @@
       <property
          name="fromsrcid">__1</property>
       <property
-         name="sdm:polyPoints">L66,1.993804,277.26868,12.949654,480.30078,L50</property>
+         name="sdm:polyPoints">L66,14.0,277.66797,14.5,480.30078,L50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -129,7 +129,7 @@
       <property
          name="fromsrcid">__1</property>
       <property
-         name="sdm:polyPoints">L18,12.44964,246.96649,25.495531,174.30077,L50</property>
+         name="sdm:polyPoints">L34,14.0,256.66797,27.045898,174.30078,L50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -143,7 +143,7 @@
       <property
          name="fromsrcid">__1</property>
       <property
-         name="sdm:polyPoints">R58,87.55036,272.2183,145.5,322.75043,T50</property>
+         name="sdm:polyPoints">R55,86.0,270.66797,104.5,378.30078,L50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -157,7 +157,7 @@
       <property
          name="fromsrcid">__1</property>
       <property
-         name="sdm:polyPoints">L82,12.44964,287.3694,18.423265,378.30078,L50</property>
+         name="sdm:polyPoints">B50,50.0,309.66797,60.973633,324.30078,T50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -171,7 +171,7 @@
       <property
          name="fromsrcid">__1</property>
       <property
-         name="sdm:polyPoints">R42,91.414444,262.11758,102.94964,276.30078,L50</property>
+         name="sdm:polyPoints">R45,90.03075,263.66797,104.5,276.30078,L50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -185,7 +185,7 @@
       <property
          name="fromsrcid">__1</property>
       <property
-         name="sdm:polyPoints">T50,50.0,223.11758,145.5,229.85112,B50</property>
+         name="sdm:polyPoints">T50,50.0,224.66797,145.5,228.30078,B50</property>
    </ControlFlowCase>
    <View
       id="View35">
@@ -210,7 +210,7 @@
       <property
          name="fromOutcome">signup</property>
       <property
-         name="sdm:polyPoints">L34,6.075901,257.06723,-144.94965,236.03519,R50</property>
+         name="sdm:polyPoints">L45,9.602923,263.66797,-146.5,236.03516,R50</property>
    </ControlFlowCase>
    <View
       id="View17">
