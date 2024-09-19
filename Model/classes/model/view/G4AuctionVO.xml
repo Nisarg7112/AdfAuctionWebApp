@@ -247,6 +247,11 @@
     ViewLink="model.view.G4BidFk2Link"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="G4AuctionVO2"
+    ViewLink="model.view.AuctionLinkAuction"
+    Type="oracle.jbo.server.ViewRowImpl"
+    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

@@ -2,9 +2,159 @@
 <!DOCTYPE html>
 <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
     <af:document title="View Auction" id="d1">
+        <af:messages id="m1"/>
         <af:form id="f1">
             <af:pageTemplate viewId="/G4template.jsf" id="pt1">
-                <f:facet name="body"/>
+                <f:facet name="body">
+                    <af:table value="#{bindings.G4AuctionVO1.collectionModel}" var="row"
+                              rows="#{bindings.G4AuctionVO1.rangeSize}"
+                              emptyText="#{bindings.G4AuctionVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              rowBandingInterval="0"
+                              selectedRowKeys="#{bindings.G4AuctionVO1.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.G4AuctionVO1.collectionModel.makeCurrent}"
+                              rowSelection="single" fetchSize="#{bindings.G4AuctionVO1.rangeSize}"
+                              filterModel="#{bindings.G4AuctionVO1Query.queryDescriptor}" filterVisible="true"
+                              queryListener="#{bindings.G4AuctionVO1Query.processQuery}" varStatus="vs" id="t1">
+                        <af:column sortProperty="#{bindings.G4AuctionVO1.hints.Itemname.name}" filterable="true"
+                                   sortable="true" headerText="#{bindings.G4AuctionVO1.hints.Itemname.label}" id="c1">
+                            <af:inputText value="#{row.bindings.Itemname.inputValue}"
+                                          label="#{bindings.G4AuctionVO1.hints.Itemname.label}"
+                                          required="#{bindings.G4AuctionVO1.hints.Itemname.mandatory}"
+                                          columns="#{bindings.G4AuctionVO1.hints.Itemname.displayWidth}"
+                                          maximumLength="#{bindings.G4AuctionVO1.hints.Itemname.precision}"
+                                          shortDesc="#{bindings.G4AuctionVO1.hints.Itemname.tooltip}" id="it1">
+                                <f:validator binding="#{row.bindings.Itemname.validator}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.G4AuctionVO1.hints.Auctionstate.name}" filterable="true"
+                                   sortable="true" headerText="#{bindings.G4AuctionVO1.hints.Auctionstate.label}"
+                                   id="c2">
+                            <af:inputText value="#{row.bindings.Auctionstate.inputValue}"
+                                          label="#{bindings.G4AuctionVO1.hints.Auctionstate.label}"
+                                          required="#{bindings.G4AuctionVO1.hints.Auctionstate.mandatory}"
+                                          columns="#{bindings.G4AuctionVO1.hints.Auctionstate.displayWidth}"
+                                          maximumLength="#{bindings.G4AuctionVO1.hints.Auctionstate.precision}"
+                                          shortDesc="#{bindings.G4AuctionVO1.hints.Auctionstate.tooltip}" id="it2">
+                                <f:validator binding="#{row.bindings.Auctionstate.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.G4AuctionVO1.hints.Auctionstate.format}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.G4AuctionVO1.hints.Creatorid.name}" filterable="true"
+                                   sortable="true" headerText="#{bindings.G4AuctionVO1.hints.Creatorid.label}" id="c3">
+                            <af:inputText value="#{row.bindings.Creatorid.inputValue}"
+                                          label="#{bindings.G4AuctionVO1.hints.Creatorid.label}"
+                                          required="#{bindings.G4AuctionVO1.hints.Creatorid.mandatory}"
+                                          columns="#{bindings.G4AuctionVO1.hints.Creatorid.displayWidth}"
+                                          maximumLength="#{bindings.G4AuctionVO1.hints.Creatorid.precision}"
+                                          shortDesc="#{bindings.G4AuctionVO1.hints.Creatorid.tooltip}" id="it3">
+                                <f:validator binding="#{row.bindings.Creatorid.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.G4AuctionVO1.hints.Creatorid.format}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.G4AuctionVO1.hints.Categoryid.name}" filterable="true"
+                                   sortable="true" headerText="#{bindings.G4AuctionVO1.hints.Categoryid.label}" id="c4">
+                            <af:selectOneChoice value="#{row.bindings.Categoryid.inputValue}"
+                                                label="#{row.bindings.Categoryid.label}"
+                                                required="#{bindings.G4AuctionVO1.hints.Categoryid.mandatory}"
+                                                shortDesc="#{bindings.G4AuctionVO1.hints.Categoryid.tooltip}" id="soc1">
+                                <f:selectItems value="#{row.bindings.Categoryid.items}" id="si1"/>
+                                <f:validator binding="#{row.bindings.Categoryid.validator}"/>
+                            </af:selectOneChoice>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.G4AuctionVO1.hints.Starttime.name}" filterable="true"
+                                   sortable="true" headerText="#{bindings.G4AuctionVO1.hints.Starttime.label}" id="c5">
+                            <f:facet name="filter">
+                                <af:inputDate value="#{bindings.G4AuctionVO1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Starttime.value}"
+                                              id="id1">
+                                    <af:convertDateTime pattern="#{bindings.G4AuctionVO1.hints.Starttime.format}"/>
+                                </af:inputDate>
+                            </f:facet>
+                            <af:inputDate value="#{row.bindings.Starttime.inputValue}"
+                                          label="#{bindings.G4AuctionVO1.hints.Starttime.label}"
+                                          required="#{bindings.G4AuctionVO1.hints.Starttime.mandatory}"
+                                          columns="#{bindings.G4AuctionVO1.hints.Starttime.displayWidth}"
+                                          shortDesc="#{bindings.G4AuctionVO1.hints.Starttime.tooltip}" id="id2">
+                                <f:validator binding="#{row.bindings.Starttime.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.G4AuctionVO1.hints.Starttime.format}"/>
+                            </af:inputDate>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.G4AuctionVO1.hints.Endtime.name}" filterable="true"
+                                   sortable="true" headerText="#{bindings.G4AuctionVO1.hints.Endtime.label}" id="c6">
+                            <f:facet name="filter">
+                                <af:inputDate value="#{bindings.G4AuctionVO1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Endtime.value}"
+                                              id="id3">
+                                    <af:convertDateTime pattern="#{bindings.G4AuctionVO1.hints.Endtime.format}"/>
+                                </af:inputDate>
+                            </f:facet>
+                            <af:inputDate value="#{row.bindings.Endtime.inputValue}"
+                                          label="#{bindings.G4AuctionVO1.hints.Endtime.label}"
+                                          required="#{bindings.G4AuctionVO1.hints.Endtime.mandatory}"
+                                          columns="#{bindings.G4AuctionVO1.hints.Endtime.displayWidth}"
+                                          shortDesc="#{bindings.G4AuctionVO1.hints.Endtime.tooltip}" id="id4">
+                                <f:validator binding="#{row.bindings.Endtime.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.G4AuctionVO1.hints.Endtime.format}"/>
+                            </af:inputDate>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.G4AuctionVO1.hints.Createdon.name}" filterable="true"
+                                   sortable="true" headerText="#{bindings.G4AuctionVO1.hints.Createdon.label}" id="c7">
+                            <f:facet name="filter">
+                                <af:inputDate value="#{bindings.G4AuctionVO1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Createdon.value}"
+                                              id="id5">
+                                    <af:convertDateTime pattern="#{bindings.G4AuctionVO1.hints.Createdon.format}"/>
+                                </af:inputDate>
+                            </f:facet>
+                            <af:inputDate value="#{row.bindings.Createdon.inputValue}"
+                                          label="#{bindings.G4AuctionVO1.hints.Createdon.label}"
+                                          required="#{bindings.G4AuctionVO1.hints.Createdon.mandatory}"
+                                          columns="#{bindings.G4AuctionVO1.hints.Createdon.displayWidth}"
+                                          shortDesc="#{bindings.G4AuctionVO1.hints.Createdon.tooltip}" id="id6">
+                                <f:validator binding="#{row.bindings.Createdon.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.G4AuctionVO1.hints.Createdon.format}"/>
+                            </af:inputDate>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.G4AuctionVO1.hints.Image.name}" sortable="true"
+                                   headerText="#{bindings.G4AuctionVO1.hints.Image.label}" filterable="true" id="c8">
+                            <af:inputText value="#{row.bindings.Image.inputValue}"
+                                          label="#{bindings.G4AuctionVO1.hints.Image.label}"
+                                          required="#{bindings.G4AuctionVO1.hints.Image.mandatory}"
+                                          columns="#{bindings.G4AuctionVO1.hints.Image.displayWidth}"
+                                          maximumLength="#{bindings.G4AuctionVO1.hints.Image.precision}"
+                                          shortDesc="#{bindings.G4AuctionVO1.hints.Image.tooltip}" id="it4">
+                                <f:validator binding="#{row.bindings.Image.validator}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.G4AuctionVO1.hints.Startprice.name}" filterable="true"
+                                   sortable="true" headerText="#{bindings.G4AuctionVO1.hints.Startprice.label}" id="c9">
+                            <af:inputText value="#{row.bindings.Startprice.inputValue}"
+                                          label="#{bindings.G4AuctionVO1.hints.Startprice.label}"
+                                          required="#{bindings.G4AuctionVO1.hints.Startprice.mandatory}"
+                                          columns="#{bindings.G4AuctionVO1.hints.Startprice.displayWidth}"
+                                          maximumLength="#{bindings.G4AuctionVO1.hints.Startprice.precision}"
+                                          shortDesc="#{bindings.G4AuctionVO1.hints.Startprice.tooltip}" id="it5">
+                                <f:validator binding="#{row.bindings.Startprice.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.G4AuctionVO1.hints.Startprice.format}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.G4AuctionVO1.hints.Currentprice.name}" filterable="true"
+                                   sortable="true" headerText="#{bindings.G4AuctionVO1.hints.Currentprice.label}"
+                                   id="c10">
+                            <af:inputText value="#{row.bindings.Currentprice.inputValue}"
+                                          label="#{bindings.G4AuctionVO1.hints.Currentprice.label}"
+                                          required="#{bindings.G4AuctionVO1.hints.Currentprice.mandatory}"
+                                          columns="#{bindings.G4AuctionVO1.hints.Currentprice.displayWidth}"
+                                          maximumLength="#{bindings.G4AuctionVO1.hints.Currentprice.precision}"
+                                          shortDesc="#{bindings.G4AuctionVO1.hints.Currentprice.tooltip}" id="it6">
+                                <f:validator binding="#{row.bindings.Currentprice.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.G4AuctionVO1.hints.Currentprice.format}"/>
+                            </af:inputText>
+                        </af:column>
+                    </af:table>
+                    <af:button text="View Details" id="b1" action="AucDetails"/>
+                </f:facet>
                 <f:attribute name="pageTitle" value="Auction Details"/>
             </af:pageTemplate>
         </af:form>

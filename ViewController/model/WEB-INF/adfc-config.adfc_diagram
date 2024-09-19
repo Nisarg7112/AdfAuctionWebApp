@@ -235,6 +235,31 @@
       <property
          name="fromOutcome">login</property>
       <property
-         name="sdm:polyPoints">L50,-4.0316124,267.16794,-173.94965,340.90237,R50</property>
+         name="sdm:polyPoints">L55,9.863615,270.66797,-175.5,340.90234,R50</property>
+   </ControlFlowCase>
+   <View
+      id="View19">
+      <property
+         name="activityId">AucDetails</property>
+      <property
+         name="x">315.8584</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>AucDetails&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">374.10156</property>
+      <property
+         name="page">/AucDetails.jsf</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase20"
+      from="View25"
+      to="View19">
+      <property
+         name="fromOutcome">AucDetails</property>
+      <property
+         name="sdm:polyPoints">R50,186.5,378.30078,274.8584,374.03516,L50</property>
    </ControlFlowCase>
 </SDM>
