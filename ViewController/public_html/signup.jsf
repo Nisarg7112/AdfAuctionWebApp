@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
         xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:jsppage="http://java.sun.com/JSP/Page">
-    <af:document title="singup.jsf" id="d1">
+    <af:document title="Singup" id="d1">
         <af:form id="f1">
             <af:panelGridLayout id="pgl1">
                 <af:gridRow height="50px" id="gr2">

@@ -25,6 +25,11 @@
       <managed-bean-class>View.CreateAuc</managed-bean-class>
       <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
+    <managed-bean id="__4">
+      <managed-bean-name>CreateAuctionbean</managed-bean-name>
+      <managed-bean-class>View.CreateAuction</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
     <method-call id="CreateInsert">
       <method>#{bindings.CreateInsert.execute}</method>
       <outcome>
