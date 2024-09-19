@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="AucDetailsPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="view.pageDefs.G4templatePageDef" id="ptb1" Refresh="ifNeeded"/>
+    <iterator Binds="G4BidVO2" RangeSize="25" DataControl="AppModuleDataControl1" id="G4BidVO2Iterator"
+              ChangeEventPolicy="ppr"/>
+    <iterator Binds="G4AuctionVO2_1" RangeSize="25" DataControl="AppModuleDataControl1" id="G4AuctionVO2_1Iterator"
+              ChangeEventPolicy="ppr"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="G4BidVO2Iterator" id="G4BidVO2">
+      <nodeDefinition DefName="model.view.G4BidVO" Name="G4BidVO20">
+        <AttrNames>
+          <Item Value="Bidid"/>
+          <Item Value="Bidderid"/>
+          <Item Value="Auctionid"/>
+          <Item Value="Amount"/>
+          <Item Value="Bidtime"/>
+          <Item Value="Column1"/>
+          <Item Value="Column2"/>
+          <Item Value="Column3"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="G4AuctionVO2_1Iterator" id="Auctionid1">
+      <AttrNames>
+        <Item Value="Auctionid"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G4AuctionVO2_1Iterator" id="Auctionstate1">
+      <AttrNames>
+        <Item Value="Auctionstate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G4AuctionVO2_1Iterator" id="Buyerid1">
+      <AttrNames>
+        <Item Value="Buyerid"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G4AuctionVO2_1Iterator" id="Categoryid1">
+      <AttrNames>
+        <Item Value="Categoryid"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G4AuctionVO2_1Iterator" id="Createdon1">
+      <AttrNames>
+        <Item Value="Createdon"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G4AuctionVO2_1Iterator" id="Creatorid1">
+      <AttrNames>
+        <Item Value="Creatorid"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G4AuctionVO2_1Iterator" id="Currentprice1">
+      <AttrNames>
+        <Item Value="Currentprice"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G4AuctionVO2_1Iterator" id="Description1">
+      <AttrNames>
+        <Item Value="Description"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G4AuctionVO2_1Iterator" id="Endtime1">
+      <AttrNames>
+        <Item Value="Endtime"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G4AuctionVO2_1Iterator" id="Image1">
+      <AttrNames>
+        <Item Value="Image"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G4AuctionVO2_1Iterator" id="Itemname1">
+      <AttrNames>
+        <Item Value="Itemname"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G4AuctionVO2_1Iterator" id="Startprice1">
+      <AttrNames>
+        <Item Value="Startprice"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G4AuctionVO2_1Iterator" id="Starttime1">
+      <AttrNames>
+        <Item Value="Starttime"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

@@ -23,6 +23,7 @@
     <page path="/ViewAuc.jsf" usageId="view_ViewAucPageDef"/>
     <page path="/BidHistory.jsf" usageId="view_BidHistoryPageDef"/>
     <page path="/AuctionHistory.jsf" usageId="view_AuctionHistoryPageDef"/>
+    <page path="/AucDetails.jsf" usageId="view_AucDetailsPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_signupPageDef" path="view.pageDefs.signupPageDef"/>
@@ -41,6 +42,7 @@
     <page id="view_ViewAucPageDef" path="view.pageDefs.ViewAucPageDef"/>
     <page id="view_BidHistoryPageDef" path="view.pageDefs.BidHistoryPageDef"/>
     <page id="view_AuctionHistoryPageDef" path="view.pageDefs.AuctionHistoryPageDef"/>
+    <page id="view_AucDetailsPageDef" path="view.pageDefs.AucDetailsPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl1" Package="model.entity"
