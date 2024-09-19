@@ -13,6 +13,10 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <Variable
+    Name="usernameParam"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
   <EntityUsage
     Name="G4UsersEO"
     Entity="model.entity.G4UsersEO"/>
@@ -124,6 +128,48 @@
     EntityAttrName="Column8"
     EntityUsage="G4UsersEO"
     AliasName="COLUMN8"/>
+  <ViewCriteria
+    Name="ByUsername"
+    ViewObjectName="model.view.G4UsersVO"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteria
+      Name="G4UsersVOSubCriteria1"
+      ViewObjectName="model.view.G4UsersVO"
+      Conjunction="AND">
+      <ViewCriteriaRow
+        Name="G4UsersVOSubCriteria1_row_0"
+        UpperColumns="1">
+        <ViewCriteriaItem
+          Name="Username"
+          ViewAttribute="Username"
+          Operator="="
+          Conjunction="AND"
+          Value=":usernameParam"
+          UpperColumns="0"
+          IsBindVarValue="true"
+          Required="Optional"/>
+      </ViewCriteriaRow>
+    </ViewCriteria>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="G4BidVO"
     ViewLink="model.view.G4BidFk1Link"

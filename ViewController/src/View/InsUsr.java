@@ -15,7 +15,7 @@ import oracle.binding.BindingContainer;
 import oracle.binding.OperationBinding;
 
 public class InsUsr {
-    private String passwordCopy = "Hello";
+    private String passwordCopy = "";
     
     public String getPasswordCopy() {
         return passwordCopy;
@@ -26,6 +26,7 @@ public class InsUsr {
     }
     
     public InsUsr() {
+        super();
     }
 
     public BindingContainer getBindings() {
