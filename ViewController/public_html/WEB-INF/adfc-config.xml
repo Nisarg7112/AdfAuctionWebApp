@@ -24,6 +24,9 @@
   <view id="login">
     <page>/login.jsf</page>
   </view>
+  <view id="AucDetails">
+    <page>/AucDetails.jsf</page>
+  </view>
   <control-flow-rule id="__1">
     <from-activity-id>*</from-activity-id>
     <control-flow-case id="__2">
@@ -57,6 +60,13 @@
     <control-flow-case id="__8">
       <from-outcome>login</from-outcome>
       <to-activity-id>login</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__12">
+    <from-activity-id>ViewAuc</from-activity-id>
+    <control-flow-case id="__13">
+      <from-outcome>AucDetails</from-outcome>
+      <to-activity-id>AucDetails</to-activity-id>
     </control-flow-case>
   </control-flow-rule>
   <managed-bean id="__10">

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AuctionLinkAuction"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.view.AuctionLinkAuction_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="G4AuctionVO"
+    Cardinality="1"
+    Source="true"
+    Owner="model.view.G4AuctionVO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="G4AuctionVO"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.view.G4AuctionVO.Auctionid"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="G4AuctionVO2"
+    Cardinality="1"
+    Owner="model.view.G4AuctionVO2">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="G4AuctionVO2"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.view.G4AuctionVO2.Auctionid"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewLink>
