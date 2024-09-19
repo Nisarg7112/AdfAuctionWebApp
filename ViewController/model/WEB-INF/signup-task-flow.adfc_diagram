@@ -69,7 +69,7 @@
       from="View3"
       to="TaskFlowReturn5">
       <property
-         name="fromOutcome">*</property>
+         name="fromOutcome">login</property>
       <property
          name="sdm:polyPoints">B50,989.0,403.80078,925.0,522.60156,T50</property>
    </ControlFlowCase>

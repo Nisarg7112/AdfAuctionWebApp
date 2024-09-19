@@ -3,7 +3,9 @@
                 Package="view.pageDefs">
   <parameters/>
   <executables>
-    <variableIterator id="variables"/>
+    <variableIterator id="variables">
+      <variable Name="passwordCopy" Type="java.lang.String"/>
+    </variableIterator>
     <iterator Binds="G4UsersVO1" RangeSize="25" DataControl="AppModuleDataControl1" id="G4UsersVO1Iterator"/>
   </executables>
   <bindings>
@@ -20,6 +22,11 @@
     <attributeValues IterBinding="G4UsersVO1Iterator" id="Password">
       <AttrNames>
         <Item Value="Password"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues id="PasswordCopy">
+      <AttrNames>
+        <Item Value="passwordCopy"/>
       </AttrNames>
     </attributeValues>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
