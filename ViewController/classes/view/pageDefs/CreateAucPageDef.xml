@@ -6,6 +6,7 @@
     <variableIterator id="variables"/>
     <taskFlow id="createAuctionTF1" taskFlowId="/WEB-INF/createAuctionTF.xml#createAuctionTF" activation="deferred"
               xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <iterator id="G4UsersVO1Iterator" Binds="G4UsersVO1" DataControl="AppModuleDataControl1" RangeSize="25"/>
   </executables>
   <bindings/>
 </pageDefinition>
