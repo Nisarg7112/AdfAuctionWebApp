@@ -27,7 +27,7 @@ public class LoggedUserHelper {
         ADFContext adfCtx = ADFContext.getCurrent(); 
         SecurityContext secCntx = adfCtx.getSecurityContext();
         if (!secCntx.isAuthenticated()) {
-            System.out.println("no authenticated");
+            System.out.println("lh:no authenticated");
             return -1;
         }
         String username = secCntx.getUserName();
@@ -38,7 +38,7 @@ public class LoggedUserHelper {
             
            BindingContext bctx = BindingContext.getCurrent();
            DCBindingContainer bindings = (DCBindingContainer) bctx.getCurrentBindingsEntry();
-           
+           System.out.println("lh:bindings:" + bindings);
            DCDataControl dataControl = bindings.getDataControl();
            ApplicationModule am = (ApplicationModule)dataControl.getDataProvider();
            
@@ -62,7 +62,7 @@ public class LoggedUserHelper {
        } catch (Exception e) {
            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error While getting user info", null));
            System.out.println(e);
-           
+           e.printStackTrace();
        }
        return -1;
     }
