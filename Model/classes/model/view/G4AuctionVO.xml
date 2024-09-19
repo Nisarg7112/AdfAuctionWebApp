@@ -13,6 +13,33 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="CategoryListVO1"
+    ViewObjectName="model.view.CategoryListVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="UsersListVO1"
+    ViewObjectName="model.view.UsersListVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_Categoryid"
+    ListVOName="CategoryListVO1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Categoryid"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Categoryid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Categoryname"/>
+      <Item Value="Categoryid"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="G4AuctionEO"
     Entity="model.entity.G4AuctionEO"/>
@@ -35,48 +62,102 @@
     PrecisionRule="true"
     EntityAttrName="Buyerid"
     EntityUsage="G4AuctionEO"
-    AliasName="BUYERID"/>
+    AliasName="BUYERID">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.view.G4AuctionVO.Buyerid_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Auctionstate"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="Auctionstate"
     EntityUsage="G4AuctionEO"
-    AliasName="AUCTIONSTATE"/>
+    AliasName="AUCTIONSTATE"
+    DefaultValue="1">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.view.G4AuctionVO.Auctionstate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Creatorid"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="Creatorid"
     EntityUsage="G4AuctionEO"
-    AliasName="CREATORID"/>
+    AliasName="CREATORID"
+    DefaultValue="1">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.view.G4AuctionVO.Creatorid_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Categoryid"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="Categoryid"
     EntityUsage="G4AuctionEO"
-    AliasName="CATEGORYID"/>
+    AliasName="CATEGORYID"
+    LOVName="LOV_Categoryid">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+        <LABEL
+          ResId="model.view.G4AuctionVO.Categoryid_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Starttime"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="Starttime"
     EntityUsage="G4AuctionEO"
-    AliasName="STARTTIME"/>
+    AliasName="STARTTIME">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.view.G4AuctionVO.Starttime_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Endtime"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="Endtime"
     EntityUsage="G4AuctionEO"
-    AliasName="ENDTIME"/>
+    AliasName="ENDTIME">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.view.G4AuctionVO.Endtime_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Createdon"
     PrecisionRule="true"
     EntityAttrName="Createdon"
     EntityUsage="G4AuctionEO"
-    AliasName="CREATEDON"/>
+    AliasName="CREATEDON">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.view.G4AuctionVO.Createdon_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Image"
     IsQueriable="false"
@@ -90,14 +171,28 @@
     PrecisionRule="true"
     EntityAttrName="Startprice"
     EntityUsage="G4AuctionEO"
-    AliasName="STARTPRICE"/>
+    AliasName="STARTPRICE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.view.G4AuctionVO.Startprice_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Currentprice"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="Currentprice"
     EntityUsage="G4AuctionEO"
-    AliasName="CURRENTPRICE"/>
+    AliasName="CURRENTPRICE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.view.G4AuctionVO.Currentprice_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Description"
     PrecisionRule="true"
@@ -152,4 +247,8 @@
     ViewLink="model.view.G4BidFk2Link"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

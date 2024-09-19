@@ -12,11 +12,6 @@
         <Item Value="Itemname"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="G4AuctionVO1Iterator" id="Buyerid">
-      <AttrNames>
-        <Item Value="Buyerid"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="G4AuctionVO1Iterator" id="Auctionstate">
       <AttrNames>
         <Item Value="Auctionstate"/>
@@ -27,11 +22,8 @@
         <Item Value="Creatorid"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="G4AuctionVO1Iterator" id="Categoryid">
-      <AttrNames>
-        <Item Value="Categoryid"/>
-      </AttrNames>
-    </attributeValues>
+    <list IterBinding="G4AuctionVO1Iterator" StaticList="false" Uses="LOV_Categoryid" id="Categoryid"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <attributeValues IterBinding="G4AuctionVO1Iterator" id="Starttime">
       <AttrNames>
         <Item Value="Starttime"/>
