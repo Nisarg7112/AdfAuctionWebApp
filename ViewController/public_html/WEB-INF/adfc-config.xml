@@ -59,4 +59,14 @@
       <to-activity-id>login</to-activity-id>
     </control-flow-case>
   </control-flow-rule>
+  <managed-bean id="__10">
+    <managed-bean-name>SingupBean</managed-bean-name>
+    <managed-bean-class>View.SgnBean</managed-bean-class>
+    <managed-bean-scope>view</managed-bean-scope>
+  </managed-bean>
+   <managed-bean id="__11">
+    <managed-bean-name>LoggedUserHelper</managed-bean-name>
+    <managed-bean-class>View.LoggedUserHelper</managed-bean-class>
+    <managed-bean-scope>view</managed-bean-scope>
+  </managed-bean>
 </adfc-config>

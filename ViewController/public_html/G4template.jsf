@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <af:pageTemplateDef xmlns:af="http://xmlns.oracle.com/adf/faces/rich" var="attrs" definition="private"
-                    xmlns:afc="http://xmlns.oracle.com/adf/faces/rich/component" xmlns:f="http://java.sun.com/jsf/core">
+                    xmlns:afc="http://xmlns.oracle.com/adf/faces/rich/component" xmlns:f="http://java.sun.com/jsf/core"
+                    xmlns:h="http://java.sun.com/jsf/html">
     <af:xmlContent>
         <afc:component>
             <afc:description/>
@@ -32,8 +33,9 @@
                     <af:gridCell marginStart="5px" width="33%" marginEnd="5px" id="pt_gc3">
                         <af:panelGroupLayout id="pt_pgl2" layout="horizontal" halign="right">
                             <af:menuBar id="pt_mb2">
-                                <af:menu text="#{securityContext.userName}  " id="pt_m1"
-                                         visible="#{securityContext.authenticated}">
+                                <af:menu id="pt_m1"
+                                         visible="#{securityContext.authenticated}"
+                                         text="#{securityContext.userName}#{viewScope.LoggedUserHelper.loggedInUserId}">
                                     <af:commandMenuItem text="Logout" id="pt_cmi1"/>
                                 </af:menu>
                             </af:menuBar>
@@ -66,6 +68,7 @@
                         <f:facet name="center">
                             <af:facetRef facetName="body"/>
                         </f:facet>
+                        <f:facet name="top"/>
                     </af:decorativeBox>
                 </f:facet>
             </af:decorativeBox>
