@@ -9,6 +9,7 @@
               ChangeEventPolicy="ppr"/>
     <iterator Binds="G4AuctionVO2_1" RangeSize="25" DataControl="AppModuleDataControl1" id="G4AuctionVO2_1Iterator"
               ChangeEventPolicy="ppr"/>
+    <iterator Binds="BidentryVO1" RangeSize="25" DataControl="AppModuleDataControl1" id="BidentryVO1Iterator"/>
   </executables>
   <bindings>
     <tree IterBinding="G4BidVO2Iterator" id="G4BidVO2">
@@ -88,6 +89,24 @@
     <attributeValues IterBinding="G4AuctionVO2_1Iterator" id="Starttime1">
       <AttrNames>
         <Item Value="Starttime"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="BidentryVO1Iterator" id="CreateInsert" InstanceName="AppModuleDataControl1.BidentryVO1"
+            DataControl="AppModuleDataControl1" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action id="Rollback" DataControl="AppModuleDataControl1" RequiresUpdateModel="false" Action="rollbackTransaction"/>
+    <attributeValues IterBinding="G4BidVO2Iterator" id="Bidderid">
+      <AttrNames>
+        <Item Value="Bidderid"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G4BidVO2Iterator" id="Amount">
+      <AttrNames>
+        <Item Value="Amount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G4BidVO2Iterator" id="Auctionid">
+      <AttrNames>
+        <Item Value="Auctionid"/>
       </AttrNames>
     </attributeValues>
   </bindings>

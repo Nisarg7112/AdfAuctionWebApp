@@ -88,7 +88,42 @@
                             </af:panelFormLayout>
                         </af:panelHeader>
                     </af:panelGroupLayout>
-                    <af:button text="button 1" id="b1"/>
+                    <af:panelGroupLayout id="pgl3">
+                        <af:button text="Bid" id="b2">
+                            <af:showPopupBehavior popupId="p1" triggerType="action"/>
+                        </af:button>
+                        <af:popup childCreation="deferred" autoCancel="disabled" id="p1" contentDelivery="lazyUncached"
+                                  popupFetchListener="#{Mybean.popupfetch}"
+                                  popupCanceledListener="#{Mybean.popupcancel}">
+                            <af:dialog id="d2" attributeChangeListener="#{Mybean.OKentrybid}">
+                                <f:facet name="buttonBar"/>
+                                <af:panelFormLayout id="pfl1">
+                                    <af:inputText value="#{bindings.Amount.inputValue}"
+                                                  label="#{bindings.Amount.hints.label}"
+                                                  required="#{bindings.Amount.hints.mandatory}"
+                                                  columns="#{bindings.Amount.hints.displayWidth}"
+                                                  maximumLength="#{bindings.Amount.hints.precision}"
+                                                  shortDesc="#{bindings.Amount.hints.tooltip}" id="it2"
+                                                  binding="#{Mybean.amount}">
+                                        <f:validator binding="#{bindings.Amount.validator}"/>
+                                        <af:convertNumber groupingUsed="false" pattern="#{bindings.Amount.format}"/>
+                                    </af:inputText>
+                                    <af:inputText visible="false"
+                                    value="#{bindings.Auctionid.inputValue}"
+                                                  label="#{bindings.Auctionid.hints.label}"
+                                                  required="#{bindings.Auctionid.hints.mandatory}"
+                                                  columns="#{bindings.Auctionid.hints.displayWidth}"
+                                                  maximumLength="#{bindings.Auctionid.hints.precision}"
+                                                  shortDesc="#{bindings.Auctionid.hints.tooltip}" id="it3"
+                                                  binding="#{Mybean.auctionid}">
+                                        <f:validator binding="#{bindings.Auctionid.validator}"/>
+                                        <af:convertNumber groupingUsed="false" pattern="#{bindings.Auctionid.format}"/>
+                                    </af:inputText>
+                                    <af:button text="submit" id="b1" action="#{Mybean.OKentrybid}"/>
+                                </af:panelFormLayout>
+                            </af:dialog>
+                        </af:popup>
+                    </af:panelGroupLayout>
                     <af:panelGroupLayout id="pgl1">
                         <af:panelHeader text="Bidding History" id="ph2">
                             <af:table rows="#{bindings.G4BidVO2.rangeSize}" fetchSize="#{bindings.G4BidVO2.rangeSize}"
@@ -96,7 +131,7 @@
                                       var="row" value="#{bindings.G4BidVO2.collectionModel}" rowBandingInterval="0"
                                       selectedRowKeys="#{bindings.G4BidVO2.collectionModel.selectedRow}"
                                       selectionListener="#{bindings.G4BidVO2.collectionModel.makeCurrent}"
-                                      rowSelection="single" id="t1">
+                                      rowSelection="single" id="t1" partialTriggers="::b1">
                                 <af:column headerText="#{bindings.G4BidVO2.hints.Bidid.label}"
                                            sortProperty="#{bindings.G4BidVO2.hints.Bidid.name}" sortable="false"
                                            id="c21">
@@ -163,6 +198,7 @@
                                                    shortDesc="#{bindings.G4BidVO2.hints.Column3.tooltip}" id="ot28"/>
                                 </af:column>
                             </af:table>
+                            <af:button text="button 3" id="b3"/>
                         </af:panelHeader>
                     </af:panelGroupLayout>
                 </f:facet>
@@ -170,4 +206,5 @@
             </af:pageTemplate>
         </af:form>
     </af:document>
+    <!--oracle-jdev-comment:preferred-managed-bean-name:Mybean-->
 </f:view>
