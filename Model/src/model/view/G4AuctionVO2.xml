@@ -19,6 +19,48 @@
         ResId="model.view.G4AuctionVO2_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
+  <ViewAccessor
+    Name="CategoryListVO1"
+    ViewObjectName="model.view.CategoryListVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="G4AucstatesVO1"
+    ViewObjectName="model.view.G4AucstatesVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_Categoryid"
+    ListVOName="CategoryListVO1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Categoryid"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Categoryid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Categoryname"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Auctionstate"
+    ListVOName="G4AucstatesVO1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Auctionstate"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Stateid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Statename"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="G4AuctionEO"
     Entity="model.entity.G4AuctionEO"/>
@@ -34,7 +76,15 @@
     PrecisionRule="true"
     EntityAttrName="Auctionstate"
     EntityUsage="G4AuctionEO"
-    AliasName="AUCTIONSTATE"/>
+    AliasName="AUCTIONSTATE"
+    LOVName="LOV_Auctionstate">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Buyerid"
     PrecisionRule="true"
@@ -47,7 +97,15 @@
     PrecisionRule="true"
     EntityAttrName="Categoryid"
     EntityUsage="G4AuctionEO"
-    AliasName="CATEGORYID"/>
+    AliasName="CATEGORYID"
+    LOVName="LOV_Categoryid">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Createdon"
     PrecisionRule="true"
