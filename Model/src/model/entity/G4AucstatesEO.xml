@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="G4AucstatesEO"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="G4_AUCSTATES"
+  AliasName="G4AucstatesEO"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="Stateid"
+    IsNotNull="true"
+    ColumnName="STATEID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="G4_AUCSTATES"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Statename"
+    Precision="50"
+    ColumnName="STATENAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="G4_AUCSTATES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Key
+    Name="G4AucstatesPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="G4_AUCSTATES_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.entity.G4AucstatesEO.Stateid"/>
+    </AttrArray>
+  </Key>
+</Entity>

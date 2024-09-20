@@ -5,8 +5,8 @@
   <executables>
     <variableIterator id="variables"/>
     <iterator Binds="G4AuctionVO1" RangeSize="25" DataControl="AppModuleDataControl1" id="G4AuctionVO1Iterator"/>
-    <searchRegion Binds="G4AuctionVO1Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="G4AuctionVO1Query"/>
+    <searchRegion Criteria="G4AuctionVOSearchCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="G4AuctionVO1Iterator" id="G4AuctionVOSearchCriteriaQuery"/>
   </executables>
   <bindings>
     <tree IterBinding="G4AuctionVO1Iterator" id="G4AuctionVO1">
@@ -22,6 +22,7 @@
           <Item Value="Image"/>
           <Item Value="Startprice"/>
           <Item Value="Currentprice"/>
+          <Item Value="Description"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
