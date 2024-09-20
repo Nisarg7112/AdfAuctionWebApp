@@ -11,11 +11,8 @@ import oracle.adf.model.binding.DCDataControl;
 import oracle.adf.share.ADFContext;
 import oracle.adf.share.security.SecurityContext;
 
-import oracle.binding.BindingContainer;
-
 import oracle.jbo.ApplicationModule;
 import oracle.jbo.Row;
-import oracle.jbo.ViewCriteria;
 import oracle.jbo.ViewObject;
 
 public class LoggedUserHelper {
@@ -23,14 +20,22 @@ public class LoggedUserHelper {
         super();
     }
     
-    public Integer getLoggedInUserId() {
+    public String getUsername() {
         ADFContext adfCtx = ADFContext.getCurrent(); 
         SecurityContext secCntx = adfCtx.getSecurityContext();
         if (!secCntx.isAuthenticated()) {
             System.out.println("lh:no authenticated");
+            return null;
+        }
+        return secCntx.getUserName();
+    }
+    
+    public Integer getLoggedInUserId() {
+        String username = this.getUsername();
+        if (username == null) {
+            System.out.println("lh:no authenticated");
             return -1;
         }
-        String username = secCntx.getUserName();
         
         System.out.println("username: " + username);
         

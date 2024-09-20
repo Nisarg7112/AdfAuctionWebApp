@@ -6,13 +6,27 @@
   Name="G4UsersVO"
   Version="12.2.1.9.14"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="G4UsersEO.USERID, 
+       G4UsersEO.USERNAME, 
+       G4UsersEO.EMAIL, 
+       G4UsersEO.PASSWORD, 
+       G4UsersEO.DOB, 
+       G4UsersEO.MOBILE, 
+       G4UsersEO.ADDRESS, 
+       G4UsersEO.COLUMN1, 
+       G4UsersEO.COLUMN2, 
+       G4UsersEO.COLUMN3, 
+       G4UsersEO.COLUMN4, 
+       G4UsersEO.COLUMN5, 
+       G4UsersEO.COLUMN7, 
+       G4UsersEO.COLUMN6, 
+       G4UsersEO.COLUMN9, 
+       G4UsersEO.PROFILEPICTURE, 
+       G4UsersEO.COLUMN8"
+  FromList="G4_USERS G4UsersEO">
   <Variable
     Name="usernameParam"
     Kind="viewcriteria"

@@ -5,6 +5,18 @@
   <executables>
     <variableIterator id="variables"/>
     <iterator id="G4UsersVO1Iterator" Binds="G4UsersVO1" DataControl="AppModuleDataControl1" RangeSize="25"/>
+    <iterator Binds="UserBidVo1" RangeSize="25" DataControl="AppModuleDataControl1" id="UserBidVo1Iterator"/>
   </executables>
-  <bindings/>
+  <bindings>
+    <tree IterBinding="UserBidVo1Iterator" id="UserBidVo1">
+      <nodeDefinition DefName="model.view.UserBidVo" Name="UserBidVo10">
+        <AttrNames>
+          <Item Value="Bidid"/>
+          <Item Value="Amount"/>
+          <Item Value="Bidtime"/>
+          <Item Value="Itemname"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
 </pageDefinition>

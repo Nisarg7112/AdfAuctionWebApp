@@ -235,6 +235,6 @@
       <property
          name="fromOutcome">login</property>
       <property
-         name="sdm:polyPoints">L50,-4.0316124,267.16794,-173.94965,340.90237,R50</property>
+         name="sdm:polyPoints">L55,9.863615,270.66797,-175.5,340.90234,R50</property>
    </ControlFlowCase>
 </SDM>
