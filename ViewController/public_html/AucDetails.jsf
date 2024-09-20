@@ -93,33 +93,11 @@
                             <af:showPopupBehavior popupId="p1" triggerType="action"/>
                         </af:button>
                         <af:popup childCreation="deferred" autoCancel="disabled" id="p1" contentDelivery="lazyUncached"
-                                  popupFetchListener="#{Mybean.popupfetch}"
-                                  popupCanceledListener="#{Mybean.popupcancel}">
-                            <af:dialog id="d2" attributeChangeListener="#{Mybean.OKentrybid}">
-                                <f:facet name="buttonBar"/>
+                                  binding="#{newbidentry.myPopup}">
+                            <af:dialog id="d2" type="none">
                                 <af:panelFormLayout id="pfl1">
-                                    <af:inputText value="#{bindings.Amount.inputValue}"
-                                                  label="#{bindings.Amount.hints.label}"
-                                                  required="#{bindings.Amount.hints.mandatory}"
-                                                  columns="#{bindings.Amount.hints.displayWidth}"
-                                                  maximumLength="#{bindings.Amount.hints.precision}"
-                                                  shortDesc="#{bindings.Amount.hints.tooltip}" id="it2"
-                                                  binding="#{Mybean.amount}">
-                                        <f:validator binding="#{bindings.Amount.validator}"/>
-                                        <af:convertNumber groupingUsed="false" pattern="#{bindings.Amount.format}"/>
-                                    </af:inputText>
-                                    <af:inputText visible="false"
-                                    value="#{bindings.Auctionid.inputValue}"
-                                                  label="#{bindings.Auctionid.hints.label}"
-                                                  required="#{bindings.Auctionid.hints.mandatory}"
-                                                  columns="#{bindings.Auctionid.hints.displayWidth}"
-                                                  maximumLength="#{bindings.Auctionid.hints.precision}"
-                                                  shortDesc="#{bindings.Auctionid.hints.tooltip}" id="it3"
-                                                  binding="#{Mybean.auctionid}">
-                                        <f:validator binding="#{bindings.Auctionid.validator}"/>
-                                        <af:convertNumber groupingUsed="false" pattern="#{bindings.Auctionid.format}"/>
-                                    </af:inputText>
-                                    <af:button text="submit" id="b1" action="#{Mybean.OKentrybid}"/>
+                                    <af:inputText label="Amount" id="it1" value="#{newbidentry.amount}"/>
+                                    <af:button text="submit" id="b1" action="#{newbidentry.OKentrybid}"/>
                                 </af:panelFormLayout>
                             </af:dialog>
                         </af:popup>
@@ -198,7 +176,6 @@
                                                    shortDesc="#{bindings.G4BidVO2.hints.Column3.tooltip}" id="ot28"/>
                                 </af:column>
                             </af:table>
-                            <af:button text="button 3" id="b3"/>
                         </af:panelHeader>
                     </af:panelGroupLayout>
                 </f:facet>
