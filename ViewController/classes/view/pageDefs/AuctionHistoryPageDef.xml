@@ -5,6 +5,31 @@
   <executables>
     <variableIterator id="variables"/>
     <iterator id="G4UsersVO1Iterator" Binds="G4UsersVO1" DataControl="AppModuleDataControl1" RangeSize="25"/>
+    <iterator Binds="UserAuctionVO1" RangeSize="25" DataControl="AppModuleDataControl1" id="UserAuctionVO1Iterator"/>
   </executables>
-  <bindings/>
+  <bindings>
+    <tree IterBinding="UserAuctionVO1Iterator" id="UserAuctionVO1">
+      <nodeDefinition DefName="model.view.UserAuctionVO" Name="UserAuctionVO10">
+        <AttrNames>
+          <Item Value="Auctionid"/>
+          <Item Value="Auctionstate"/>
+          <Item Value="Buyerid"/>
+          <Item Value="Categoryid"/>
+          <Item Value="Createdon"/>
+          <Item Value="Creatorid"/>
+          <Item Value="Currentprice"/>
+          <Item Value="Description"/>
+          <Item Value="Endtime"/>
+          <Item Value="Image"/>
+          <Item Value="Itemname"/>
+          <Item Value="Startprice"/>
+          <Item Value="Starttime"/>
+          <Item Value="Statename"/>
+          <Item Value="Stateid"/>
+          <Item Value="Categoryname"/>
+          <Item Value="Categoryid1"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
 </pageDefinition>

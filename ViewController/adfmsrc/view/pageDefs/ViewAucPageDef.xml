@@ -4,7 +4,27 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator id="G4UsersVO1Iterator" Binds="G4UsersVO1" DataControl="AppModuleDataControl1" RangeSize="25"/>
+    <iterator Binds="G4AuctionVO1" RangeSize="25" DataControl="AppModuleDataControl1" id="G4AuctionVO1Iterator"/>
+    <searchRegion Criteria="G4AuctionVOSearchCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="G4AuctionVO1Iterator" id="G4AuctionVOSearchCriteriaQuery"/>
   </executables>
-  <bindings/>
+  <bindings>
+    <tree IterBinding="G4AuctionVO1Iterator" id="G4AuctionVO1">
+      <nodeDefinition DefName="model.view.G4AuctionVO" Name="G4AuctionVO10">
+        <AttrNames>
+          <Item Value="Itemname"/>
+          <Item Value="Auctionstate"/>
+          <Item Value="Creatorid"/>
+          <Item Value="Categoryid"/>
+          <Item Value="Starttime"/>
+          <Item Value="Endtime"/>
+          <Item Value="Createdon"/>
+          <Item Value="Image"/>
+          <Item Value="Startprice"/>
+          <Item Value="Currentprice"/>
+          <Item Value="Description"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
 </pageDefinition>

@@ -21,6 +21,10 @@
     Name="UsersListVO1"
     ViewObjectName="model.view.UsersListVO"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="G4AucstatesVO1"
+    ViewObjectName="model.view.G4AucstatesVO"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Categoryid"
     ListVOName="CategoryListVO1"
@@ -37,6 +41,23 @@
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Categoryname"/>
       <Item Value="Categoryid"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Auctionstate"
+    ListVOName="G4AucstatesVO1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Auctionstate"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Stateid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Statename"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -77,11 +98,14 @@
     EntityAttrName="Auctionstate"
     EntityUsage="G4AuctionEO"
     AliasName="AUCTIONSTATE"
-    DefaultValue="1">
+    DefaultValue="1"
+    LOVName="LOV_Auctionstate">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
           ResId="model.view.G4AuctionVO.Auctionstate_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -242,10 +266,67 @@
     EntityAttrName="Column7"
     EntityUsage="G4AuctionEO"
     AliasName="COLUMN7"/>
+  <ViewCriteria
+    Name="G4AuctionVOSearchCriteria"
+    ViewObjectName="model.view.G4AuctionVO"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="false"/>
+        <Property
+          Name="showInList"
+          Value="false"/>
+        <Property
+          Name="displayOperators"
+          Value="Never"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="G4AuctionVOCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="Itemname"
+        ViewAttribute="Itemname"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="Auctionstate"
+        ViewAttribute="Auctionstate"
+        Operator="="
+        Conjunction="AND"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="Categoryid"
+        ViewAttribute="Categoryid"
+        Operator="="
+        Conjunction="AND"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="Currentprice"
+        ViewAttribute="Currentprice"
+        Operator="BETWEEN"
+        Conjunction="AND"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="G4BidVO"
     ViewLink="model.view.G4BidFk2Link"
     Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="G4AuctionVO2"
+    ViewLink="model.view.AuctionLinkAuction"
+    Type="oracle.jbo.server.ViewRowImpl"
     IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle

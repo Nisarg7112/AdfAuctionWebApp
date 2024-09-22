@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AuctionCategoryAssoc"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="G4CategoryEO"
+    Cardinality="1"
+    Source="true"
+    Owner="model.entity.G4CategoryEO"
+    LockLevel="NONE">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="G4CategoryEO"/>
+      <Attr Name="_foreignKey" Value="model.entity.G4CategoryEO.G4CategoryPk"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.entity.G4CategoryEO.Categoryid"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="G4AuctionEO"
+    Cardinality="-1"
+    Owner="model.entity.G4AuctionEO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="G4AuctionEO"/>
+      <Attr Name="_foreignKey" Value="model.entity.G4AuctionEO.fk_G4AuctionEO"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.entity.G4AuctionEO.Categoryid"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

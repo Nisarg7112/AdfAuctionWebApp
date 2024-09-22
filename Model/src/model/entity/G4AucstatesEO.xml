@@ -3,50 +3,49 @@
 <!---->
 <Entity
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="G4CategoryEO"
+  Name="G4AucstatesEO"
   Version="12.2.1.9.14"
   InheritPersonalization="merge"
   DBObjectType="table"
-  DBObjectName="G4_CATEGORY"
-  AliasName="G4CategoryEO"
+  DBObjectName="G4_AUCSTATES"
+  AliasName="G4AucstatesEO"
   BindingStyle="OracleName">
   <Attribute
-    Name="Categoryid"
-    ColumnName="CATEGORYID"
+    Name="Stateid"
+    IsNotNull="true"
+    ColumnName="STATEID"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="G4_CATEGORY"
-    PrimaryKey="true"
-    RetrievedOnInsert="true"/>
+    TableName="G4_AUCSTATES"
+    PrimaryKey="true"/>
   <Attribute
-    Name="Categoryname"
-    IsNotNull="true"
+    Name="Statename"
     Precision="50"
-    ColumnName="CATEGORYNAME"
+    ColumnName="STATENAME"
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="G4_CATEGORY">
+    TableName="G4_AUCSTATES">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="50"/>
     </DesignTime>
   </Attribute>
   <AccessorAttribute
     Name="G4AuctionEO"
-    Association="model.entity.AuctionCategoryAssoc"
-    AssociationEnd="model.entity.AuctionCategoryAssoc.G4AuctionEO"
-    AssociationOtherEnd="model.entity.AuctionCategoryAssoc.G4CategoryEO"
-    Type="oracle.jbo.RowIterator"
-    IsUpdateable="false"/>
+    Association="model.entity.AuctionAuctionState"
+    AssociationEnd="model.entity.AuctionAuctionState.G4AuctionEO"
+    AssociationOtherEnd="model.entity.AuctionAuctionState.G4AucstatesEO"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
-    Name="G4CategoryPk"
+    Name="G4AucstatesPk"
     PrimaryKey="true">
     <DesignTime>
-      <Attr Name="_DBObjectName" Value="G4_CATEGORY_PK"/>
+      <Attr Name="_DBObjectName" Value="G4_AUCSTATES_PK"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.entity.G4CategoryEO.Categoryid"/>
+      <Item Value="model.entity.G4AucstatesEO.Stateid"/>
     </AttrArray>
   </Key>
 </Entity>

@@ -224,6 +224,20 @@
     AssociationOtherEnd="model.entity.G4AuctionFk1Assoc.G4AuctionEO1"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="G4AucstatesEO"
+    Association="model.entity.AuctionAuctionState"
+    AssociationEnd="model.entity.AuctionAuctionState.G4AucstatesEO"
+    AssociationOtherEnd="model.entity.AuctionAuctionState.G4AuctionEO"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="G4CategoryEO"
+    Association="model.entity.AuctionCategoryAssoc"
+    AssociationEnd="model.entity.AuctionCategoryAssoc.G4CategoryEO"
+    AssociationOtherEnd="model.entity.AuctionCategoryAssoc.G4AuctionEO"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
     Name="G4AuctionPk"
     PrimaryKey="true">
@@ -254,6 +268,17 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="model.entity.G4AuctionEO.Creatorid"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_G4AuctionEO">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="G4_CATEGORY_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_G4AUCTION_EO"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.entity.G4AuctionEO.Categoryid"/>
     </AttrArray>
   </Key>
   <ResourceBundle>
