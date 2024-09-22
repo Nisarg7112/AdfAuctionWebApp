@@ -94,6 +94,11 @@
     <action IterBinding="BidentryVO1Iterator" id="CreateInsert" InstanceName="AppModuleDataControl1.BidentryVO1"
             DataControl="AppModuleDataControl1" RequiresUpdateModel="true" Action="createInsertRow"/>
     <action id="Rollback" DataControl="AppModuleDataControl1" RequiresUpdateModel="false" Action="rollbackTransaction"/>
+    <attributeValues IterBinding="G4BidVO2Iterator" id="Bidderid">
+      <AttrNames>
+        <Item Value="Bidderid"/>
+      </AttrNames>
+    </attributeValues>
     <attributeValues IterBinding="G4BidVO2Iterator" id="Amount">
       <AttrNames>
         <Item Value="Amount"/>
