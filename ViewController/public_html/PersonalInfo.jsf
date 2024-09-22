@@ -1,10 +1,133 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE html>
-<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:h="http://java.sun.com/jsf/html">
     <af:document title="Personal Information" id="d1">
+        <af:messages id="m1"/>
         <af:form id="f1">
             <af:pageTemplate viewId="/G4template.jsf" id="pt1">
-                <f:facet name="body"/>
+                <f:facet name="body">
+                    <af:panelFormLayout id="pfl1">
+                        <af:inputText value="#{bindings.Address.inputValue}" label="#{bindings.Address.hints.label}"
+                                      required="#{bindings.Address.hints.mandatory}" readOnly="true"
+                                      columns="#{bindings.Address.hints.displayWidth}"
+                                      maximumLength="#{bindings.Address.hints.precision}"
+                                      shortDesc="#{bindings.Address.hints.tooltip}" id="it1">
+                            <f:validator binding="#{bindings.Address.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.Userid.inputValue}" label="#{bindings.Userid.hints.label}"
+                                      required="#{bindings.Userid.hints.mandatory}" readOnly="true"
+                                      columns="#{bindings.Userid.hints.displayWidth}"
+                                      maximumLength="#{bindings.Userid.hints.precision}"
+                                      shortDesc="#{bindings.Userid.hints.tooltip}" id="it2">
+                            <f:validator binding="#{bindings.Userid.validator}"/>
+                            <af:convertNumber groupingUsed="false" pattern="#{bindings.Userid.format}"/>
+                        </af:inputText>
+                        <af:inputDate value="#{bindings.Dob.inputValue}" readOnly="true"
+                                      label="#{bindings.Dob.hints.label}" required="#{bindings.Dob.hints.mandatory}"
+                                      columns="#{bindings.Dob.hints.displayWidth}"
+                                      shortDesc="#{bindings.Dob.hints.tooltip}" id="id1">
+                            <f:validator binding="#{bindings.Dob.validator}"/>
+                            <af:convertDateTime pattern="#{bindings.Dob.format}"/>
+                        </af:inputDate>
+                        <af:inputText value="#{bindings.Email.inputValue}" label="#{bindings.Email.hints.label}"
+                                      required="#{bindings.Email.hints.mandatory}" readOnly="true"
+                                      columns="#{bindings.Email.hints.displayWidth}"
+                                      maximumLength="#{bindings.Email.hints.precision}"
+                                      shortDesc="#{bindings.Email.hints.tooltip}" id="it3">
+                            <f:validator binding="#{bindings.Email.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.Mobile.inputValue}" label="#{bindings.Mobile.hints.label}"
+                                      required="#{bindings.Mobile.hints.mandatory}" readOnly="true"
+                                      columns="#{bindings.Mobile.hints.displayWidth}"
+                                      maximumLength="#{bindings.Mobile.hints.precision}"
+                                      shortDesc="#{bindings.Mobile.hints.tooltip}" id="it4">
+                            <f:validator binding="#{bindings.Mobile.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.Password.inputValue}" label="#{bindings.Password.hints.label}"
+                                      required="#{bindings.Password.hints.mandatory}" readOnly="true"
+                                      columns="#{bindings.Password.hints.displayWidth}"
+                                      maximumLength="#{bindings.Password.hints.precision}"
+                                      shortDesc="#{bindings.Password.hints.tooltip}" id="it5">
+                            <f:validator binding="#{bindings.Password.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.Username.inputValue}" label="#{bindings.Username.hints.label}"
+                                      required="#{bindings.Username.hints.mandatory}" readOnly="true"
+                                      columns="#{bindings.Username.hints.displayWidth}"
+                                      maximumLength="#{bindings.Username.hints.precision}"
+                                      shortDesc="#{bindings.Username.hints.tooltip}" id="it6">
+                            <f:validator binding="#{bindings.Username.validator}"/>
+                        </af:inputText>
+                    </af:panelFormLayout>
+                    <af:popup childCreation="deferred" autoCancel="disabled" id="p1">
+                        <af:dialog id="d2">
+                            <af:panelFormLayout id="pfl2">
+                                <af:inputText value="#{bindings.Address.inputValue}"
+                                              label="#{bindings.Address.hints.label}"
+                                              required="#{bindings.Address.hints.mandatory}"
+                                              columns="#{bindings.Address.hints.displayWidth}"
+                                              maximumLength="#{bindings.Address.hints.precision}"
+                                              shortDesc="#{bindings.Address.hints.tooltip}" id="it7">
+                                    <f:validator binding="#{bindings.Address.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.Userid.inputValue}"
+                                              label="#{bindings.Userid.hints.label}"
+                                              required="#{bindings.Userid.hints.mandatory}"
+                                              columns="#{bindings.Userid.hints.displayWidth}"
+                                              maximumLength="#{bindings.Userid.hints.precision}"
+                                              shortDesc="#{bindings.Userid.hints.tooltip}" id="it8" readOnly="true">
+                                    <f:validator binding="#{bindings.Userid.validator}"/>
+                                    <af:convertNumber groupingUsed="false" pattern="#{bindings.Userid.format}"/>
+                                </af:inputText>
+                                <af:inputDate value="#{bindings.Dob.inputValue}" label="#{bindings.Dob.hints.label}"
+                                              required="#{bindings.Dob.hints.mandatory}"
+                                              columns="#{bindings.Dob.hints.displayWidth}"
+                                              shortDesc="#{bindings.Dob.hints.tooltip}" id="id2">
+                                    <f:validator binding="#{bindings.Dob.validator}"/>
+                                    <af:convertDateTime pattern="#{bindings.Dob.format}"/>
+                                </af:inputDate>
+                                <af:inputText value="#{bindings.Email.inputValue}" label="#{bindings.Email.hints.label}"
+                                              required="#{bindings.Email.hints.mandatory}"
+                                              columns="#{bindings.Email.hints.displayWidth}"
+                                              maximumLength="#{bindings.Email.hints.precision}"
+                                              shortDesc="#{bindings.Email.hints.tooltip}" id="it9">
+                                    <f:validator binding="#{bindings.Email.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.Mobile.inputValue}"
+                                              label="#{bindings.Mobile.hints.label}"
+                                              required="#{bindings.Mobile.hints.mandatory}"
+                                              columns="#{bindings.Mobile.hints.displayWidth}"
+                                              maximumLength="#{bindings.Mobile.hints.precision}"
+                                              shortDesc="#{bindings.Mobile.hints.tooltip}" id="it10">
+                                    <f:validator binding="#{bindings.Mobile.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.Password.inputValue}"
+                                              label="#{bindings.Password.hints.label}"
+                                              required="#{bindings.Password.hints.mandatory}"
+                                              columns="#{bindings.Password.hints.displayWidth}"
+                                              maximumLength="#{bindings.Password.hints.precision}"
+                                              shortDesc="#{bindings.Password.hints.tooltip}" id="it11">
+                                    <f:validator binding="#{bindings.Password.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.Username.inputValue}"
+                                              label="#{bindings.Username.hints.label}"
+                                              required="#{bindings.Username.hints.mandatory}"
+                                              columns="#{bindings.Username.hints.displayWidth}"
+                                              maximumLength="#{bindings.Username.hints.precision}"
+                                              shortDesc="#{bindings.Username.hints.tooltip}" id="it12" readOnly="true">
+                                    <f:validator binding="#{bindings.Username.validator}"/>
+                                </af:inputText>
+                                <f:facet name="footer">
+                                    <af:button text="Commit" id="b1"
+                                               actionListener="#{bindings.Commit.execute}"/>
+                                </f:facet>
+                            </af:panelFormLayout>
+                        </af:dialog>
+                    </af:popup>
+                    <af:button text="Edit" id="b2">
+                        <af:showPopupBehavior popupId="p1"/>
+                    </af:button>
+                </f:facet>
                 <f:attribute name="pageTitle" value="Personal Information"/>
             </af:pageTemplate>
         </af:form>

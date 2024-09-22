@@ -31,6 +31,13 @@
       <Attr Name="_DisplaySize" Value="50"/>
     </DesignTime>
   </Attribute>
+  <AccessorAttribute
+    Name="G4AuctionEO"
+    Association="model.entity.AuctionAuctionState"
+    AssociationEnd="model.entity.AuctionAuctionState.G4AuctionEO"
+    AssociationOtherEnd="model.entity.AuctionAuctionState.G4AucstatesEO"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
     Name="G4AucstatesPk"
     PrimaryKey="true">

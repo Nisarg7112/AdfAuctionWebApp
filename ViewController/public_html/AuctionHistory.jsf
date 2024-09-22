@@ -2,9 +2,31 @@
 <!DOCTYPE html>
 <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
     <af:document title="Auction History" id="d1">
+        <af:messages id="m1"/>
         <af:form id="f1">
             <af:pageTemplate viewId="/G4template.jsf" id="pt1">
-                <f:facet name="body"/>
+                <f:facet name="body">
+                    <af:listView value="#{bindings.UserAuctionVO1.collectionModel}" var="item"
+                                 emptyText="#{bindings.UserAuctionVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                 fetchSize="#{bindings.UserAuctionVO1.rangeSize}" id="lv1">
+                        <af:listItem id="li1">
+                            <af:panelGridLayout id="pgl1">
+                                <af:gridRow marginTop="5px" height="auto" id="gr1">
+                                    <af:gridCell marginStart="5px" width="50%" id="gc1"/>
+                                    <af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc2"/>
+                                </af:gridRow>
+                                <af:gridRow marginTop="5px" height="auto" id="gr2">
+                                    <af:gridCell marginStart="5px" width="50%" id="gc3"/>
+                                    <af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc4"/>
+                                </af:gridRow>
+                                <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr3">
+                                    <af:gridCell marginStart="5px" width="50%" id="gc5"/>
+                                    <af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc6"/>
+                                </af:gridRow>
+                            </af:panelGridLayout>
+                        </af:listItem>
+                    </af:listView>
+                </f:facet>
                 <f:attribute name="pageTitle" value="Auction History"/>
             </af:pageTemplate>
         </af:form>

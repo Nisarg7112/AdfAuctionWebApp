@@ -1,0 +1,14 @@
+//Groovy Scripts for model.view.UserInfoVO
+
+package model.view
+
+import oracle.jbo.script.annotation.VariableExpression;
+
+@VariableExpression(path="t1")
+def t1_VariableScript_Variable()
+{
+adf.context.current.securityContext.userName
+// #{securityContext.userName}#{viewScope.LoggedUserHelper.loggedInUserId}
+// adf.context.current.viewScope.loggedUserHelper.loggedInUserId
+}
+

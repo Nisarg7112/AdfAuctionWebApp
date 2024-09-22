@@ -41,11 +41,20 @@
     Name="G4AuctionVO3"
     ViewObjectName="model.view.G4AuctionVO"/>
   <ViewUsage
+    Name="UserInfo1"
+    ViewObjectName="model.view.UserInfoVO"/>
+  <ViewUsage
+    Name="UserBidVo1"
+    ViewObjectName="model.view.UserBidVo"/>
+  <ViewUsage
     Name="G4AuctionVO2_1"
     ViewObjectName="model.view.G4AuctionVO2"/>
   <ViewUsage
     Name="G4AucstatesVO1"
     ViewObjectName="model.view.G4AucstatesVO"/>
+  <ViewUsage
+    Name="UserAuctionVO1"
+    ViewObjectName="model.view.UserAuctionVO"/>
   <ViewLinkUsage
     Name="G4BidFk2Link1"
     ViewLinkObjectName="model.view.G4BidFk2Link"

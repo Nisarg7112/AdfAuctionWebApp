@@ -1,0 +1,12 @@
+//Groovy Scripts for model.view.UserAuctionVO
+
+package model.view
+
+import oracle.jbo.script.annotation.VariableExpression;
+
+@VariableExpression(path="userid")
+def userid_VariableScript_Variable()
+{
+adf.context.expressionEvaluator.evaluate('#{viewScope.LoggedUserHelper.loggedInUserId}')
+}
+
