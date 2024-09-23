@@ -6,9 +6,6 @@
     <variableIterator id="variables"/>
     <page path="view.pageDefs.G4templatePageDef" id="ptb1" Refresh="ifNeeded"/>
     <iterator Binds="G4AuctionVO2New" RangeSize="25" DataControl="AppModuleDataControl1" id="G4AuctionVO2NewIterator"/>
-    <iterator Binds="NewBid1" RangeSize="25" DataControl="AppModuleDataControl1" id="NewBid1Iterator"/>
-    <searchRegion Binds="NewBid1Iterator" Criteria="" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
-                  id="NewBid1Query"/>
   </executables>
   <bindings>
     <action IterBinding="BidentryVO1Iterator" id="CreateInsert" InstanceName="AppModuleDataControl1.BidentryVO1"
@@ -63,15 +60,5 @@
         <Item Value="Image"/>
       </AttrNames>
     </attributeValues>
-    <tree IterBinding="NewBid1Iterator" id="NewBid1">
-      <nodeDefinition DefName="model.view.NewBidVO" Name="NewBid10">
-        <AttrNames>
-          <Item Value="Itemname"/>
-          <Item Value="Username"/>
-          <Item Value="Amount"/>
-          <Item Value="Bidtime"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
   </bindings>
 </pageDefinition>

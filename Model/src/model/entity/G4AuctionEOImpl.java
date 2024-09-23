@@ -504,7 +504,11 @@ public class G4AuctionEOImpl extends EntityImpl {
      */
     protected void create(AttributeList attributeList) {
         setAuctionstate(BigDecimal.valueOf(1));
-        setCreatorid(BigDecimal.valueOf(1));
+        //dummy variable to set in java bean
+          setCreatorid(BigDecimal.valueOf(1));
+          
+          // dummy variable to set in java bean
+          setCurrentprice(BigDecimal.valueOf(1));
         super.create(attributeList);
         
     }
