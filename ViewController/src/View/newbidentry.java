@@ -65,7 +65,7 @@ public class newbidentry extends LoggedUserHelper{
            op.execute();
        }
 
-    public void OKentrybid(){
+    public String OKentrybid(){
        //  Add event code here...
        
        
@@ -75,11 +75,11 @@ public class newbidentry extends LoggedUserHelper{
                     DCDataControl dataControl = bindings.getDataControl();
                     ApplicationModule am = (ApplicationModule)dataControl.getDataProvider();
                     
-        ViewObject AuctionVo=am.findViewObject("G4AuctionVO2_1");
+        ViewObject AuctionVo=am.findViewObject("G4AuctionVO2New");
         Row auction=AuctionVo.first();
         BigDecimal auctionid = (BigDecimal) auction.getAttribute("Auctionid");
         
-                    ViewObject BidVO = am.findViewObject("G4BidVO2");
+                    ViewObject BidVO = am.findViewObject("NewBid1");
                     Row newBid = BidVO.createRow();
                     
                     bidderid = getLoggedInUserId();
@@ -108,6 +108,7 @@ public class newbidentry extends LoggedUserHelper{
         
         RichPopup popup  = getMyPopup();
         popup.hide();
+        return null;
         
     }
 

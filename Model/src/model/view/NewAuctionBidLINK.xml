@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="NewAuctionBidLINK"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  EntityAssociation="model.entity.G4BidFk2Assoc">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.view.NewAuctionBidLINK_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="ViewAuctionNewVO"
+    Cardinality="1"
+    Source="true"
+    Owner="model.view.ViewAuctionNewVO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="ViewAuctionNewVO"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.view.ViewAuctionNewVO.Auctionid"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="NewBidVO"
+    Cardinality="-1"
+    Owner="model.view.NewBidVO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="NewBidVO"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.view.NewBidVO.Auctionid"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewLink>
