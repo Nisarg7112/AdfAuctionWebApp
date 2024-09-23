@@ -4,25 +4,74 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="G4AuctionVO1" RangeSize="25" DataControl="AppModuleDataControl1" id="G4AuctionVO1Iterator"/>
-    <searchRegion Criteria="G4AuctionVOSearchCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
-                  Binds="G4AuctionVO1Iterator" id="G4AuctionVOSearchCriteriaQuery"/>
+    <iterator Binds="ViewAuctionNewVO1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="ViewAuctionNewVO1Iterator"/>
+    <searchRegion Criteria="ViewAuctionNewVOCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="ViewAuctionNewVO1Iterator" id="ViewAuctionNewVOCriteriaQuery"/>
   </executables>
   <bindings>
-    <tree IterBinding="G4AuctionVO1Iterator" id="G4AuctionVO1">
-      <nodeDefinition DefName="model.view.G4AuctionVO" Name="G4AuctionVO10">
+    <tree IterBinding="ViewAuctionNewVO1Iterator" id="ViewAuctionNewVO1">
+      <nodeDefinition DefName="model.view.ViewAuctionNewVO" Name="ViewAuctionNewVO10">
         <AttrNames>
           <Item Value="Itemname"/>
-          <Item Value="Auctionstate"/>
-          <Item Value="Creatorid"/>
-          <Item Value="Categoryid"/>
-          <Item Value="Starttime"/>
-          <Item Value="Endtime"/>
+          <Item Value="Username"/>
           <Item Value="Createdon"/>
-          <Item Value="Image"/>
+          <Item Value="Categoryname"/>
+          <Item Value="Statename"/>
           <Item Value="Startprice"/>
           <Item Value="Currentprice"/>
+          <Item Value="Starttime"/>
+          <Item Value="Endtime"/>
+          <Item Value="Image"/>
           <Item Value="Description"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="ViewAuctionNewVO1Iterator" id="ViewAuctionNewVO11">
+      <nodeDefinition DefName="model.view.ViewAuctionNewVO" Name="ViewAuctionNewVO110">
+        <AttrNames>
+          <Item Value="Auctionid"/>
+          <Item Value="Buyerid"/>
+          <Item Value="Createdon"/>
+          <Item Value="Creatorid"/>
+          <Item Value="Currentprice"/>
+          <Item Value="Description"/>
+          <Item Value="Endtime"/>
+          <Item Value="Image"/>
+          <Item Value="Itemname"/>
+          <Item Value="Startprice"/>
+          <Item Value="Starttime"/>
+          <Item Value="Categoryname"/>
+          <Item Value="Categoryid"/>
+          <Item Value="Username"/>
+          <Item Value="Userid"/>
+          <Item Value="Username1"/>
+          <Item Value="Userid1"/>
+          <Item Value="Categoryid1"/>
+          <Item Value="Creatorid1"/>
+          <Item Value="Auctionstate"/>
+          <Item Value="Statename"/>
+          <Item Value="Stateid"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="G4AuctionVO2"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="model.view.G4AuctionVO2">
+        <AttrNames>
+          <Item Value="Auctionid"/>
+          <Item Value="Auctionstate"/>
+          <Item Value="Buyerid"/>
+          <Item Value="Categoryid"/>
+          <Item Value="Createdon"/>
+          <Item Value="Creatorid"/>
+          <Item Value="Currentprice"/>
+          <Item Value="Description"/>
+          <Item Value="Endtime"/>
+          <Item Value="Image"/>
+          <Item Value="Itemname"/>
+          <Item Value="Startprice"/>
+          <Item Value="Starttime"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

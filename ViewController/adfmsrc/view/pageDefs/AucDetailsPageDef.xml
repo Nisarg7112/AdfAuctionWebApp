@@ -5,93 +5,73 @@
   <executables>
     <variableIterator id="variables"/>
     <page path="view.pageDefs.G4templatePageDef" id="ptb1" Refresh="ifNeeded"/>
-    <iterator Binds="G4BidVO2" RangeSize="25" DataControl="AppModuleDataControl1" id="G4BidVO2Iterator"
-              ChangeEventPolicy="ppr"/>
-    <iterator Binds="G4AuctionVO2_1" RangeSize="25" DataControl="AppModuleDataControl1" id="G4AuctionVO2_1Iterator"
-              ChangeEventPolicy="ppr"/>
+    <iterator Binds="G4AuctionVO2New" RangeSize="25" DataControl="AppModuleDataControl1" id="G4AuctionVO2NewIterator"/>
+    <iterator Binds="NewBid1" RangeSize="25" DataControl="AppModuleDataControl1" id="NewBid1Iterator"/>
+    <searchRegion Binds="NewBid1Iterator" Criteria="" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="NewBid1Query"/>
   </executables>
   <bindings>
-    <tree IterBinding="G4BidVO2Iterator" id="G4BidVO2">
-      <nodeDefinition DefName="model.view.G4BidVO" Name="G4BidVO20">
-        <AttrNames>
-          <Item Value="Bidid"/>
-          <Item Value="Bidderid"/>
-          <Item Value="Auctionid"/>
-          <Item Value="Amount"/>
-          <Item Value="Bidtime"/>
-          <Item Value="Column1"/>
-          <Item Value="Column2"/>
-          <Item Value="Column3"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
-    <attributeValues IterBinding="G4AuctionVO2_1Iterator" id="Auctionid1">
-      <AttrNames>
-        <Item Value="Auctionid"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="G4AuctionVO2_1Iterator" id="Auctionstate1">
-      <AttrNames>
-        <Item Value="Auctionstate"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="G4AuctionVO2_1Iterator" id="Buyerid1">
-      <AttrNames>
-        <Item Value="Buyerid"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="G4AuctionVO2_1Iterator" id="Categoryid1">
-      <AttrNames>
-        <Item Value="Categoryid"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="G4AuctionVO2_1Iterator" id="Createdon1">
-      <AttrNames>
-        <Item Value="Createdon"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="G4AuctionVO2_1Iterator" id="Creatorid1">
-      <AttrNames>
-        <Item Value="Creatorid"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="G4AuctionVO2_1Iterator" id="Currentprice1">
-      <AttrNames>
-        <Item Value="Currentprice"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="G4AuctionVO2_1Iterator" id="Description1">
-      <AttrNames>
-        <Item Value="Description"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="G4AuctionVO2_1Iterator" id="Endtime1">
-      <AttrNames>
-        <Item Value="Endtime"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="G4AuctionVO2_1Iterator" id="Image1">
-      <AttrNames>
-        <Item Value="Image"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="G4AuctionVO2_1Iterator" id="Itemname1">
+    <action IterBinding="BidentryVO1Iterator" id="CreateInsert" InstanceName="AppModuleDataControl1.BidentryVO1"
+            DataControl="AppModuleDataControl1" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action id="Rollback" DataControl="AppModuleDataControl1" RequiresUpdateModel="false" Action="rollbackTransaction"/>
+    <attributeValues IterBinding="G4AuctionVO2NewIterator" id="Itemname">
       <AttrNames>
         <Item Value="Itemname"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="G4AuctionVO2_1Iterator" id="Startprice1">
+    <list IterBinding="G4AuctionVO2NewIterator" StaticList="false" Uses="LOV_Auctionstate" id="Auctionstate"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="G4AuctionVO2NewIterator" StaticList="false" Uses="LOV_Categoryid" id="Categoryid"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="G4AuctionVO2NewIterator" id="Createdon">
       <AttrNames>
-        <Item Value="Startprice"/>
+        <Item Value="Createdon"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="G4AuctionVO2_1Iterator" id="Starttime1">
+    <attributeValues IterBinding="G4AuctionVO2NewIterator" id="Creatorid">
+      <AttrNames>
+        <Item Value="Creatorid"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G4AuctionVO2NewIterator" id="Starttime">
       <AttrNames>
         <Item Value="Starttime"/>
       </AttrNames>
     </attributeValues>
-    <action IterBinding="BidentryVO1Iterator" id="CreateInsert" InstanceName="AppModuleDataControl1.BidentryVO1"
-            DataControl="AppModuleDataControl1" RequiresUpdateModel="true" Action="createInsertRow"/>
-    <action id="Rollback" DataControl="AppModuleDataControl1" RequiresUpdateModel="false" Action="rollbackTransaction"/>
+    <attributeValues IterBinding="G4AuctionVO2NewIterator" id="Endtime">
+      <AttrNames>
+        <Item Value="Endtime"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G4AuctionVO2NewIterator" id="Startprice">
+      <AttrNames>
+        <Item Value="Startprice"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G4AuctionVO2NewIterator" id="Currentprice">
+      <AttrNames>
+        <Item Value="Currentprice"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G4AuctionVO2NewIterator" id="Description">
+      <AttrNames>
+        <Item Value="Description"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G4AuctionVO2NewIterator" id="Image">
+      <AttrNames>
+        <Item Value="Image"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="NewBid1Iterator" id="NewBid1">
+      <nodeDefinition DefName="model.view.NewBidVO" Name="NewBid10">
+        <AttrNames>
+          <Item Value="Itemname"/>
+          <Item Value="Username"/>
+          <Item Value="Amount"/>
+          <Item Value="Bidtime"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

@@ -45,7 +45,9 @@ public class G4AuctionEOImpl extends EntityImpl {
         Column7,
         G4BidEO,
         G4UsersEO,
-        G4UsersEO1;
+        G4UsersEO1,
+        G4AucstatesEO,
+        G4CategoryEO;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -68,6 +70,8 @@ public class G4AuctionEOImpl extends EntityImpl {
             return vals;
         }
     }
+
+
     public static final int AUCTIONID = AttributesEnum.Auctionid.index();
     public static final int ITEMNAME = AttributesEnum.Itemname.index();
     public static final int BUYERID = AttributesEnum.Buyerid.index();
@@ -91,12 +95,22 @@ public class G4AuctionEOImpl extends EntityImpl {
     public static final int G4BIDEO = AttributesEnum.G4BidEO.index();
     public static final int G4USERSEO = AttributesEnum.G4UsersEO.index();
     public static final int G4USERSEO1 = AttributesEnum.G4UsersEO1.index();
+    public static final int G4AUCSTATESEO = AttributesEnum.G4AucstatesEO.index();
+    public static final int G4CATEGORYEO = AttributesEnum.G4CategoryEO.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public G4AuctionEOImpl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.entity.G4AuctionEO");
+    }
+
 
     /**
      * Gets the attribute value for Auctionid, using the alias name Auctionid.
@@ -454,19 +468,34 @@ public class G4AuctionEOImpl extends EntityImpl {
     }
 
     /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getG4AucstatesEO() {
+        return (RowIterator) getAttributeInternal(G4AUCSTATESEO);
+    }
+
+    /**
+     * @return the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public EntityImpl getG4CategoryEO() {
+        return (EntityImpl) getAttributeInternal(G4CATEGORYEO);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public void setG4CategoryEO(EntityImpl value) {
+        setAttributeInternal(G4CATEGORYEO, value);
+    }
+
+
+    /**
      * @param auctionid key constituent
 
      * @return a Key object based on given key constituents.
      */
     public static Key createPrimaryKey(BigDecimal auctionid) {
         return new Key(new Object[] { auctionid });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.entity.G4AuctionEO");
     }
 
     /**

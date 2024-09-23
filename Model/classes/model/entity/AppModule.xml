@@ -55,6 +55,15 @@
   <ViewUsage
     Name="UserAuctionVO1"
     ViewObjectName="model.view.UserAuctionVO"/>
+  <ViewUsage
+    Name="ViewAuctionNewVO1"
+    ViewObjectName="model.view.ViewAuctionNewVO"/>
+  <ViewUsage
+    Name="G4AuctionVO2New"
+    ViewObjectName="model.view.G4AuctionVO2"/>
+  <ViewUsage
+    Name="NewBid1"
+    ViewObjectName="model.view.NewBidVO"/>
   <ViewLinkUsage
     Name="G4BidFk2Link1"
     ViewLinkObjectName="model.view.G4BidFk2Link"
@@ -84,5 +93,17 @@
     ViewLinkObjectName="model.view.AuctionLinkAuction"
     SrcViewUsageName="model.entity.AppModule.G4AuctionVO1"
     DstViewUsageName="model.entity.AppModule.G4AuctionVO2_1"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="NewAuctionAuctionLink1"
+    ViewLinkObjectName="model.view.NewAuctionAuctionLink"
+    SrcViewUsageName="model.entity.AppModule.ViewAuctionNewVO1"
+    DstViewUsageName="model.entity.AppModule.G4AuctionVO2New"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="NewAuctionBidLINK1"
+    ViewLinkObjectName="model.view.NewAuctionBidLINK"
+    SrcViewUsageName="model.entity.AppModule.ViewAuctionNewVO1"
+    DstViewUsageName="model.entity.AppModule.NewBid1"
     Reversed="false"/>
 </AppModule>

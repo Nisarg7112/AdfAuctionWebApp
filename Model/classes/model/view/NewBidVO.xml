@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="NewBidVO"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  SelectList="G4BidEO.AMOUNT, 
+       G4BidEO.BIDID, 
+       G4BidEO.AUCTIONID, 
+       G4BidEO.BIDDERID, 
+       G4BidEO.BIDTIME, 
+       G4AuctionEO.ITEMNAME, 
+       G4AuctionEO.AUCTIONID AS AUCTIONID1, 
+       G4UsersEO.USERNAME, 
+       G4UsersEO.USERID"
+  FromList="G4_BID G4BidEO, G4_AUCTION G4AuctionEO, G4_USERS G4UsersEO"
+  Where="(G4BidEO.AUCTIONID = G4AuctionEO.AUCTIONID) AND (G4BidEO.BIDDERID = G4UsersEO.USERID)"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  OrderBy="G4BidEO.BIDID">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.view.NewBidVO_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="G4BidEO"
+    Entity="model.entity.G4BidEO"/>
+  <EntityUsage
+    Name="G4AuctionEO"
+    Entity="model.entity.G4AuctionEO"
+    Association="model.entity.G4BidFk2Assoc"
+    AssociationEnd="model.entity.G4BidFk2Assoc.G4AuctionEO"
+    SourceUsage="model.view.NewBidVO.G4BidEO"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="INNER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.entity.G4AuctionEO.Auctionid"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.entity.G4BidEO.Auctionid"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="G4UsersEO"
+    Entity="model.entity.G4UsersEO"
+    Association="model.entity.G4BidFk1Assoc"
+    AssociationEnd="model.entity.G4BidFk1Assoc.G4UsersEO"
+    SourceUsage="model.view.NewBidVO.G4BidEO"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="INNER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.entity.G4UsersEO.Userid"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.entity.G4BidEO.Bidderid"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <ViewAttribute
+    Name="Amount"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Amount"
+    EntityUsage="G4BidEO"
+    AliasName="AMOUNT"/>
+  <ViewAttribute
+    Name="Bidid"
+    PrecisionRule="true"
+    EntityAttrName="Bidid"
+    EntityUsage="G4BidEO"
+    AliasName="BIDID"/>
+  <ViewAttribute
+    Name="Auctionid"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Auctionid"
+    EntityUsage="G4BidEO"
+    AliasName="AUCTIONID"/>
+  <ViewAttribute
+    Name="Bidderid"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Bidderid"
+    EntityUsage="G4BidEO"
+    AliasName="BIDDERID"/>
+  <ViewAttribute
+    Name="Bidtime"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Bidtime"
+    EntityUsage="G4BidEO"
+    AliasName="BIDTIME"/>
+  <ViewAttribute
+    Name="Itemname"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Itemname"
+    EntityUsage="G4AuctionEO"
+    AliasName="ITEMNAME"/>
+  <ViewAttribute
+    Name="Auctionid1"
+    PrecisionRule="true"
+    EntityAttrName="Auctionid"
+    EntityUsage="G4AuctionEO"
+    AliasName="AUCTIONID1"/>
+  <ViewAttribute
+    Name="Username"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Username"
+    EntityUsage="G4UsersEO"
+    AliasName="USERNAME"/>
+  <ViewAttribute
+    Name="Userid"
+    PrecisionRule="true"
+    EntityAttrName="Userid"
+    EntityUsage="G4UsersEO"
+    AliasName="USERID"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="Bidid"/>
+  </AttrArray>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>
