@@ -98,7 +98,6 @@
     EntityAttrName="Auctionstate"
     EntityUsage="G4AuctionEO"
     AliasName="AUCTIONSTATE"
-    DefaultValue="1"
     LOVName="LOV_Auctionstate">
     <Properties>
       <SchemaBasedProperties>
@@ -115,8 +114,7 @@
     PrecisionRule="true"
     EntityAttrName="Creatorid"
     EntityUsage="G4AuctionEO"
-    AliasName="CREATORID"
-    DefaultValue="1">
+    AliasName="CREATORID">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
