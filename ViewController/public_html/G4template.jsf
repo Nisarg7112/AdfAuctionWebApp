@@ -34,9 +34,11 @@
                         <af:panelGroupLayout id="pt_pgl2" layout="horizontal" halign="right">
                             <af:menuBar id="pt_mb2">
                                 <af:menu id="pt_m1"
-                                         visible="#{securityContext.authenticated}"
-                                         text="#{securityContext.userName}#{viewScope.LoggedUserHelper.loggedInUserId}">
-                                    <af:commandMenuItem text="Logout" id="pt_cmi1"/>
+                                         text="#{securityContext.userName}">
+                                    <af:commandMenuItem text="Logout" id="pt_cmi1"
+                                                        visible="#{securityContext.authenticated}"/>
+                                    <af:commandMenuItem text="Login" id="pt_cmi31"
+                                                        visible="#{!securityContext.authenticated}" action="login"/>
                                 </af:menu>
                             </af:menuBar>
                         </af:panelGroupLayout>

@@ -4,7 +4,7 @@
         xmlns:h="http://java.sun.com/jsf/html">
     <af:document title="Personal Information" id="d1">
         <af:messages id="m1"/>
-        <af:form id="f1">
+        <af:form id="f1" usesUpload="true">
             <af:pageTemplate viewId="/G4template.jsf" id="pt1">
                 <f:facet name="body">
                     <af:panelFormLayout id="pfl1">
@@ -58,6 +58,9 @@
                                       shortDesc="#{bindings.Username.hints.tooltip}" id="it6">
                             <f:validator binding="#{bindings.Username.validator}"/>
                         </af:inputText>
+                        <h:outputLabel value="Profile Pic" id="ol1"/>
+                        <af:image shortDesc="Profile Pic" id="i1" source="data:image/jpg;base64,#{EdtPrsnl.imageArray}"
+                                  inlineStyle="max-height:200mm; max-width:200mm;"/>
                     </af:panelFormLayout>
                     <af:popup childCreation="deferred" autoCancel="disabled" id="p1">
                         <af:dialog id="d2">
@@ -70,6 +73,8 @@
                                               shortDesc="#{bindings.Address.hints.tooltip}" id="it7">
                                     <f:validator binding="#{bindings.Address.validator}"/>
                                 </af:inputText>
+                                <af:inputFile label="Profile Pic" id="if1"
+                                              valueChangeListener="#{EdtPrsnl.uploadFileValueChangeEvent}"/>
                                 <af:inputText value="#{bindings.Userid.inputValue}"
                                               label="#{bindings.Userid.hints.label}"
                                               required="#{bindings.Userid.hints.mandatory}"
@@ -118,8 +123,7 @@
                                     <f:validator binding="#{bindings.Username.validator}"/>
                                 </af:inputText>
                                 <f:facet name="footer">
-                                    <af:button text="Commit" id="b1"
-                                               actionListener="#{bindings.Commit.execute}"/>
+                                    <af:button text="Commit" id="b1" action="#{EdtPrsnl.b1_action}"/>
                                 </f:facet>
                             </af:panelFormLayout>
                         </af:dialog>

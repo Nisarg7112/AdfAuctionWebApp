@@ -5,6 +5,8 @@
   <executables>
     <variableIterator id="variables"/>
     <iterator id="G4UsersVO1Iterator" Binds="G4UsersVO1" DataControl="AppModuleDataControl1" RangeSize="25"/>
+    <iterator id="G4CategoryVO1Iterator" Binds="G4CategoryVO1" DataControl="AppModuleDataControl1" RangeSize="25"/>
+    <iterator id="G4AucstatesVO1Iterator" Binds="G4AucstatesVO1" DataControl="AppModuleDataControl1" RangeSize="25"/>
     <iterator Binds="UserAuctionVO1" RangeSize="25" DataControl="AppModuleDataControl1" id="UserAuctionVO1Iterator"/>
   </executables>
   <bindings>

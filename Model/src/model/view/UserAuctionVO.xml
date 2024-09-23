@@ -6,13 +6,28 @@
   Name="UserAuctionVO"
   Version="12.2.1.9.14"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="G4AuctionEO.AUCTIONID, 
+       G4AuctionEO.AUCTIONSTATE, 
+       G4AuctionEO.BUYERID, 
+       G4AuctionEO.CATEGORYID, 
+       G4AuctionEO.CREATEDON, 
+       G4AuctionEO.CREATORID, 
+       G4AuctionEO.CURRENTPRICE, 
+       G4AuctionEO.DESCRIPTION, 
+       G4AuctionEO.ENDTIME, 
+       G4AuctionEO.IMAGE, 
+       G4AuctionEO.ITEMNAME, 
+       G4AuctionEO.STARTPRICE, 
+       G4AuctionEO.STARTTIME, 
+       G4AucstatesEO.STATENAME, 
+       G4AucstatesEO.STATEID, 
+       G4CategoryEO.CATEGORYNAME, 
+       G4CategoryEO.CATEGORYID AS CATEGORYID1"
+  FromList="G4_AUCTION G4AuctionEO, G4_AUCSTATES G4AucstatesEO, G4_CATEGORY G4CategoryEO"
+  Where="((G4AuctionEO.AUCTIONSTATE = G4AucstatesEO.STATEID) AND (G4AuctionEO.CATEGORYID = G4CategoryEO.CATEGORYID)) AND ( ( ( ( G4AuctionEO.CREATORID = :userid  )  OR  ( :userid IS NULL ) ) ) )">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
@@ -22,10 +37,10 @@
   <Variable
     Name="userid"
     Kind="where"
-    Type="java.lang.Integer">
+    Type="java.lang.Integer"
+    IsUpdateable="false">
     <TransientExpression
       Name="VariableScript"
-      trustMode="trusted"
       CodeSourceName="UserAuctionVO"/>
   </Variable>
   <EntityUsage
@@ -189,31 +204,4 @@
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>
   </ResourceBundle>
-  <DeclarativeWhereClause
-    Name="DeclarativeWhereClause">
-    <ViewCriteria
-      Name="UserAuctionVOWhereCriteria"
-      ViewObjectName="model.view.UserAuctionVO"
-      Conjunction="AND"
-      Mode="3">
-      <ViewCriteriaRow
-        Name="UserAuctionVOWhereCriteria_row_0"
-        UpperColumns="1">
-        <ViewCriteriaItem
-          Name="Buyerid"
-          ViewAttribute="Buyerid"
-          Operator="="
-          Conjunction="AND"
-          Value=":userid"
-          GenerateIsNullClauseForBindVars="false"
-          IsBindVarValue="true"
-          Required="Optional"/>
-      </ViewCriteriaRow>
-    </ViewCriteria>
-  </DeclarativeWhereClause>
-  <SortCriteria>
-    <Sort
-      Attribute="Createdon"
-      Ascending="false"/>
-  </SortCriteria>
 </ViewObject>

@@ -25,7 +25,6 @@
     Type="java.lang.String">
     <TransientExpression
       Name="VariableScript"
-      trustMode="trusted"
       CodeSourceName="UserInfoVO"/>
   </Variable>
   <EntityUsage
@@ -76,6 +75,13 @@
     EntityAttrName="Username"
     EntityUsage="G4UsersEO"
     AliasName="USERNAME"/>
+  <ViewAttribute
+    Name="Profilepicture"
+    IsQueriable="false"
+    PrecisionRule="true"
+    EntityAttrName="Profilepicture"
+    EntityUsage="G4UsersEO"
+    AliasName="PROFILEPICTURE"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

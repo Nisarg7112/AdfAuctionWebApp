@@ -6,26 +6,112 @@
         <af:form id="f1">
             <af:pageTemplate viewId="/G4template.jsf" id="pt1">
                 <f:facet name="body">
-                    <af:listView value="#{bindings.UserAuctionVO1.collectionModel}" var="item"
-                                 emptyText="#{bindings.UserAuctionVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
-                                 fetchSize="#{bindings.UserAuctionVO1.rangeSize}" id="lv1">
-                        <af:listItem id="li1">
-                            <af:panelGridLayout id="pgl1">
-                                <af:gridRow marginTop="5px" height="auto" id="gr1">
-                                    <af:gridCell marginStart="5px" width="50%" id="gc1"/>
-                                    <af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc2"/>
-                                </af:gridRow>
-                                <af:gridRow marginTop="5px" height="auto" id="gr2">
-                                    <af:gridCell marginStart="5px" width="50%" id="gc3"/>
-                                    <af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc4"/>
-                                </af:gridRow>
-                                <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr3">
-                                    <af:gridCell marginStart="5px" width="50%" id="gc5"/>
-                                    <af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc6"/>
-                                </af:gridRow>
-                            </af:panelGridLayout>
-                        </af:listItem>
-                    </af:listView>
+                    <af:table value="#{bindings.UserAuctionVO1.collectionModel}" var="row"
+                              rows="#{bindings.UserAuctionVO1.rangeSize}"
+                              emptyText="#{bindings.UserAuctionVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              rowBandingInterval="0" fetchSize="#{bindings.UserAuctionVO1.rangeSize}" id="t1">
+                        <af:column headerText="#{bindings.UserAuctionVO1.hints.Auctionid.label}" id="c1">
+                            <af:outputText value="#{row.Auctionid}"
+                                           shortDesc="#{bindings.UserAuctionVO1.hints.Auctionid.tooltip}" id="ot1">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.UserAuctionVO1.hints.Auctionid.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column headerText="#{bindings.UserAuctionVO1.hints.Auctionstate.label}" id="c2">
+                            <af:outputText value="#{row.Auctionstate}"
+                                           shortDesc="#{bindings.UserAuctionVO1.hints.Auctionstate.tooltip}" id="ot2">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.UserAuctionVO1.hints.Auctionstate.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column headerText="#{bindings.UserAuctionVO1.hints.Buyerid.label}" id="c3">
+                            <af:outputText value="#{row.Buyerid}"
+                                           shortDesc="#{bindings.UserAuctionVO1.hints.Buyerid.tooltip}" id="ot3">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.UserAuctionVO1.hints.Buyerid.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column headerText="#{bindings.UserAuctionVO1.hints.Categoryid.label}" id="c4">
+                            <af:outputText value="#{row.Categoryid}"
+                                           shortDesc="#{bindings.UserAuctionVO1.hints.Categoryid.tooltip}" id="ot4">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.UserAuctionVO1.hints.Categoryid.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column headerText="#{bindings.UserAuctionVO1.hints.Createdon.label}" id="c5">
+                            <af:outputText value="#{row.Createdon}"
+                                           shortDesc="#{bindings.UserAuctionVO1.hints.Createdon.tooltip}" id="ot5">
+                                <af:convertDateTime pattern="#{bindings.UserAuctionVO1.hints.Createdon.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column headerText="#{bindings.UserAuctionVO1.hints.Creatorid.label}" id="c6">
+                            <af:outputText value="#{row.Creatorid}"
+                                           shortDesc="#{bindings.UserAuctionVO1.hints.Creatorid.tooltip}" id="ot6">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.UserAuctionVO1.hints.Creatorid.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column headerText="#{bindings.UserAuctionVO1.hints.Currentprice.label}" id="c7">
+                            <af:outputText value="#{row.Currentprice}"
+                                           shortDesc="#{bindings.UserAuctionVO1.hints.Currentprice.tooltip}" id="ot7">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.UserAuctionVO1.hints.Currentprice.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column headerText="#{bindings.UserAuctionVO1.hints.Description.label}" id="c8">
+                            <af:outputText value="#{row.Description}"
+                                           shortDesc="#{bindings.UserAuctionVO1.hints.Description.tooltip}" id="ot8"/>
+                        </af:column>
+                        <af:column headerText="#{bindings.UserAuctionVO1.hints.Endtime.label}" id="c9">
+                            <af:outputText value="#{row.Endtime}"
+                                           shortDesc="#{bindings.UserAuctionVO1.hints.Endtime.tooltip}" id="ot9">
+                                <af:convertDateTime pattern="#{bindings.UserAuctionVO1.hints.Endtime.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column headerText="#{bindings.UserAuctionVO1.hints.Image.label}" id="c10">
+                            <af:outputText value="#{row.Image}"
+                                           shortDesc="#{bindings.UserAuctionVO1.hints.Image.tooltip}" id="ot10"/>
+                        </af:column>
+                        <af:column headerText="#{bindings.UserAuctionVO1.hints.Itemname.label}" id="c11">
+                            <af:outputText value="#{row.Itemname}"
+                                           shortDesc="#{bindings.UserAuctionVO1.hints.Itemname.tooltip}" id="ot11"/>
+                        </af:column>
+                        <af:column headerText="#{bindings.UserAuctionVO1.hints.Startprice.label}" id="c12">
+                            <af:outputText value="#{row.Startprice}"
+                                           shortDesc="#{bindings.UserAuctionVO1.hints.Startprice.tooltip}" id="ot12">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.UserAuctionVO1.hints.Startprice.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column headerText="#{bindings.UserAuctionVO1.hints.Starttime.label}" id="c13">
+                            <af:outputText value="#{row.Starttime}"
+                                           shortDesc="#{bindings.UserAuctionVO1.hints.Starttime.tooltip}" id="ot13">
+                                <af:convertDateTime pattern="#{bindings.UserAuctionVO1.hints.Starttime.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column headerText="#{bindings.UserAuctionVO1.hints.Statename.label}" id="c14">
+                            <af:outputText value="#{row.Statename}"
+                                           shortDesc="#{bindings.UserAuctionVO1.hints.Statename.tooltip}" id="ot14"/>
+                        </af:column>
+                        <af:column headerText="#{bindings.UserAuctionVO1.hints.Stateid.label}" id="c15">
+                            <af:outputText value="#{row.Stateid}"
+                                           shortDesc="#{bindings.UserAuctionVO1.hints.Stateid.tooltip}" id="ot15">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.UserAuctionVO1.hints.Stateid.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column headerText="#{bindings.UserAuctionVO1.hints.Categoryname.label}" id="c16">
+                            <af:outputText value="#{row.Categoryname}"
+                                           shortDesc="#{bindings.UserAuctionVO1.hints.Categoryname.tooltip}" id="ot16"/>
+                        </af:column>
+                        <af:column headerText="#{bindings.UserAuctionVO1.hints.Categoryid1.label}" id="c17">
+                            <af:outputText value="#{row.Categoryid1}"
+                                           shortDesc="#{bindings.UserAuctionVO1.hints.Categoryid1.tooltip}" id="ot17">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.UserAuctionVO1.hints.Categoryid1.format}"/>
+                            </af:outputText>
+                        </af:column>
+                    </af:table>
                 </f:facet>
                 <f:attribute name="pageTitle" value="Auction History"/>
             </af:pageTemplate>

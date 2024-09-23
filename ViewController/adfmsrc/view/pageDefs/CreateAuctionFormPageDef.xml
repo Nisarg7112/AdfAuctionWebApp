@@ -40,11 +40,6 @@
         <Item Value="Createdon"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="G4AuctionVO1Iterator" id="Image">
-      <AttrNames>
-        <Item Value="Image"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="G4AuctionVO1Iterator" id="Startprice">
       <AttrNames>
         <Item Value="Startprice"/>
