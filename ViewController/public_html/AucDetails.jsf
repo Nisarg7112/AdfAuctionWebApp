@@ -6,90 +6,93 @@
         <af:form id="f1">
             <af:pageTemplate viewId="/G4template.jsf" value="#{bindings.ptb1}" id="pt1">
                 <f:facet name="body">
-                    <af:panelGroupLayout layout="vertical" id="pgl2">
-                        <af:panelHeader text="Details" id="ph3">
-                            <af:panelFormLayout id="pfl2">
-                                <af:panelLabelAndMessage label="#{bindings.Auctionid1.hints.label}" id="plam21">
-                                    <af:outputText value="#{bindings.Auctionid1.inputValue}"
-                                                   shortDesc="#{bindings.Auctionid1.hints.tooltip}" id="ot29">
-                                        <af:convertNumber groupingUsed="false" pattern="#{bindings.Auctionid1.format}"/>
-                                    </af:outputText>
-                                </af:panelLabelAndMessage>
-                                <af:panelLabelAndMessage label="#{bindings.Auctionstate1.hints.label}" id="plam22">
-                                    <af:outputText value="#{bindings.Auctionstate1.inputValue}"
-                                                   shortDesc="#{bindings.Auctionstate1.hints.tooltip}" id="ot30">
-                                        <af:convertNumber groupingUsed="false"
-                                                          pattern="#{bindings.Auctionstate1.format}"/>
-                                    </af:outputText>
-                                </af:panelLabelAndMessage>
-                                <af:panelLabelAndMessage label="#{bindings.Buyerid1.hints.label}" id="plam23">
-                                    <af:outputText value="#{bindings.Buyerid1.inputValue}"
-                                                   shortDesc="#{bindings.Buyerid1.hints.tooltip}" id="ot31">
-                                        <af:convertNumber groupingUsed="false" pattern="#{bindings.Buyerid1.format}"/>
-                                    </af:outputText>
-                                </af:panelLabelAndMessage>
-                                <af:panelLabelAndMessage label="#{bindings.Categoryid1.hints.label}" id="plam24">
-                                    <af:outputText value="#{bindings.Categoryid1.inputValue}"
-                                                   shortDesc="#{bindings.Categoryid1.hints.tooltip}" id="ot32">
-                                        <af:convertNumber groupingUsed="false"
-                                                          pattern="#{bindings.Categoryid1.format}"/>
-                                    </af:outputText>
-                                </af:panelLabelAndMessage>
-                                <af:panelLabelAndMessage label="#{bindings.Createdon1.hints.label}" id="plam25">
-                                    <af:outputText value="#{bindings.Createdon1.inputValue}"
-                                                   shortDesc="#{bindings.Createdon1.hints.tooltip}" id="ot33">
-                                        <af:convertDateTime pattern="#{bindings.Createdon1.format}"/>
-                                    </af:outputText>
-                                </af:panelLabelAndMessage>
-                                <af:panelLabelAndMessage label="#{bindings.Creatorid1.hints.label}" id="plam26">
-                                    <af:outputText value="#{bindings.Creatorid1.inputValue}"
-                                                   shortDesc="#{bindings.Creatorid1.hints.tooltip}" id="ot34">
-                                        <af:convertNumber groupingUsed="false" pattern="#{bindings.Creatorid1.format}"/>
-                                    </af:outputText>
-                                </af:panelLabelAndMessage>
-                                <af:panelLabelAndMessage label="#{bindings.Currentprice1.hints.label}" id="plam27">
-                                    <af:outputText value="#{bindings.Currentprice1.inputValue}"
-                                                   shortDesc="#{bindings.Currentprice1.hints.tooltip}" id="ot35">
-                                        <af:convertNumber groupingUsed="false"
-                                                          pattern="#{bindings.Currentprice1.format}"/>
-                                    </af:outputText>
-                                </af:panelLabelAndMessage>
-                                <af:panelLabelAndMessage label="#{bindings.Description1.hints.label}" id="plam28">
-                                    <af:outputText value="#{bindings.Description1.inputValue}"
-                                                   shortDesc="#{bindings.Description1.hints.tooltip}" id="ot36"/>
-                                </af:panelLabelAndMessage>
-                                <af:panelLabelAndMessage label="#{bindings.Endtime1.hints.label}" id="plam29">
-                                    <af:outputText value="#{bindings.Endtime1.inputValue}"
-                                                   shortDesc="#{bindings.Endtime1.hints.tooltip}" id="ot37">
-                                        <af:convertDateTime pattern="#{bindings.Endtime1.format}"/>
-                                    </af:outputText>
-                                </af:panelLabelAndMessage>
-                                <af:panelLabelAndMessage label="#{bindings.Image1.hints.label}" id="plam30">
-                                    <af:outputText value="#{bindings.Image1.inputValue}"
-                                                   shortDesc="#{bindings.Image1.hints.tooltip}" id="ot38"/>
-                                </af:panelLabelAndMessage>
-                                <af:panelLabelAndMessage label="#{bindings.Itemname1.hints.label}" id="plam31">
-                                    <af:outputText value="#{bindings.Itemname1.inputValue}"
-                                                   shortDesc="#{bindings.Itemname1.hints.tooltip}" id="ot39"/>
-                                </af:panelLabelAndMessage>
-                                <af:panelLabelAndMessage label="#{bindings.Startprice1.hints.label}" id="plam32">
-                                    <af:outputText value="#{bindings.Startprice1.inputValue}"
-                                                   shortDesc="#{bindings.Startprice1.hints.tooltip}" id="ot40">
-                                        <af:convertNumber groupingUsed="false"
-                                                          pattern="#{bindings.Startprice1.format}"/>
-                                    </af:outputText>
-                                </af:panelLabelAndMessage>
-                                <af:panelLabelAndMessage label="#{bindings.Starttime1.hints.label}" id="plam33">
-                                    <af:outputText value="#{bindings.Starttime1.inputValue}"
-                                                   shortDesc="#{bindings.Starttime1.hints.tooltip}" id="ot41">
-                                        <af:convertDateTime pattern="#{bindings.Starttime1.format}"/>
-                                    </af:outputText>
-                                </af:panelLabelAndMessage>
-                            </af:panelFormLayout>
-                        </af:panelHeader>
-                    </af:panelGroupLayout>
+                    <af:panelFormLayout id="pfl2">
+                        <af:inputText value="#{bindings.Itemname.inputValue}" label="#{bindings.Itemname.hints.label}"
+                                      required="#{bindings.Itemname.hints.mandatory}"
+                                      columns="#{bindings.Itemname.hints.displayWidth}"
+                                      maximumLength="#{bindings.Itemname.hints.precision}"
+                                      shortDesc="#{bindings.Itemname.hints.tooltip}" id="it2">
+                            <f:validator binding="#{bindings.Itemname.validator}"/>
+                        </af:inputText>
+                        <af:selectOneChoice value="#{bindings.Auctionstate.inputValue}"
+                                            label="#{bindings.Auctionstate.label}"
+                                            required="#{bindings.Auctionstate.hints.mandatory}"
+                                            shortDesc="#{bindings.Auctionstate.hints.tooltip}" id="soc1">
+                            <f:selectItems value="#{bindings.Auctionstate.items}" id="si1"/>
+                            <f:validator binding="#{bindings.Auctionstate.validator}"/>
+                        </af:selectOneChoice>
+                        <af:selectOneChoice value="#{bindings.Categoryid.inputValue}"
+                                            label="#{bindings.Categoryid.label}"
+                                            required="#{bindings.Categoryid.hints.mandatory}"
+                                            shortDesc="#{bindings.Categoryid.hints.tooltip}" id="soc2">
+                            <f:selectItems value="#{bindings.Categoryid.items}" id="si2"/>
+                            <f:validator binding="#{bindings.Categoryid.validator}"/>
+                        </af:selectOneChoice>
+                        <af:inputDate value="#{bindings.Createdon.inputValue}" label="#{bindings.Createdon.hints.label}"
+                                      required="#{bindings.Createdon.hints.mandatory}"
+                                      columns="#{bindings.Createdon.hints.displayWidth}"
+                                      shortDesc="#{bindings.Createdon.hints.tooltip}" id="id1">
+                            <f:validator binding="#{bindings.Createdon.validator}"/>
+                            <af:convertDateTime pattern="#{bindings.Createdon.format}"/>
+                        </af:inputDate>
+                        <af:inputText value="#{bindings.Creatorid.inputValue}" label="#{bindings.Creatorid.hints.label}"
+                                      required="#{bindings.Creatorid.hints.mandatory}"
+                                      columns="#{bindings.Creatorid.hints.displayWidth}"
+                                      maximumLength="#{bindings.Creatorid.hints.precision}"
+                                      shortDesc="#{bindings.Creatorid.hints.tooltip}" id="it3">
+                            <f:validator binding="#{bindings.Creatorid.validator}"/>
+                            <af:convertNumber groupingUsed="false" pattern="#{bindings.Creatorid.format}"/>
+                        </af:inputText>
+                        <af:inputDate value="#{bindings.Starttime.inputValue}" label="#{bindings.Starttime.hints.label}"
+                                      required="#{bindings.Starttime.hints.mandatory}"
+                                      columns="#{bindings.Starttime.hints.displayWidth}"
+                                      shortDesc="#{bindings.Starttime.hints.tooltip}" id="id2">
+                            <f:validator binding="#{bindings.Starttime.validator}"/>
+                            <af:convertDateTime pattern="#{bindings.Starttime.format}"/>
+                        </af:inputDate>
+                        <af:inputDate value="#{bindings.Endtime.inputValue}" label="#{bindings.Endtime.hints.label}"
+                                      required="#{bindings.Endtime.hints.mandatory}"
+                                      columns="#{bindings.Endtime.hints.displayWidth}"
+                                      shortDesc="#{bindings.Endtime.hints.tooltip}" id="id3">
+                            <f:validator binding="#{bindings.Endtime.validator}"/>
+                            <af:convertDateTime pattern="#{bindings.Endtime.format}"/>
+                        </af:inputDate>
+                        <af:inputText value="#{bindings.Startprice.inputValue}"
+                                      label="#{bindings.Startprice.hints.label}"
+                                      required="#{bindings.Startprice.hints.mandatory}"
+                                      columns="#{bindings.Startprice.hints.displayWidth}"
+                                      maximumLength="#{bindings.Startprice.hints.precision}"
+                                      shortDesc="#{bindings.Startprice.hints.tooltip}" id="it4">
+                            <f:validator binding="#{bindings.Startprice.validator}"/>
+                            <af:convertNumber groupingUsed="false" pattern="#{bindings.Startprice.format}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.Currentprice.inputValue}"
+                                      label="#{bindings.Currentprice.hints.label}"
+                                      required="#{bindings.Currentprice.hints.mandatory}"
+                                      columns="#{bindings.Currentprice.hints.displayWidth}"
+                                      maximumLength="#{bindings.Currentprice.hints.precision}"
+                                      shortDesc="#{bindings.Currentprice.hints.tooltip}" id="it5">
+                            <f:validator binding="#{bindings.Currentprice.validator}"/>
+                            <af:convertNumber groupingUsed="false" pattern="#{bindings.Currentprice.format}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.Description.inputValue}"
+                                      label="#{bindings.Description.hints.label}"
+                                      required="#{bindings.Description.hints.mandatory}"
+                                      columns="#{bindings.Description.hints.displayWidth}"
+                                      maximumLength="#{bindings.Description.hints.precision}"
+                                      shortDesc="#{bindings.Description.hints.tooltip}" id="it6">
+                            <f:validator binding="#{bindings.Description.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.Image.inputValue}" label="#{bindings.Image.hints.label}"
+                                      required="#{bindings.Image.hints.mandatory}"
+                                      columns="#{bindings.Image.hints.displayWidth}"
+                                      maximumLength="#{bindings.Image.hints.precision}"
+                                      shortDesc="#{bindings.Image.hints.tooltip}" id="it7">
+                            <f:validator binding="#{bindings.Image.validator}"/>
+                        </af:inputText>
+                    </af:panelFormLayout>
                     <af:panelGroupLayout id="pgl3">
-                        <af:button text="Bid" id="b2">
+                        <af:button text="Bid" id="b2" action="#{newbidentry.OKentrybid}">
                             <af:showPopupBehavior popupId="p1" triggerType="action"/>
                         </af:button>
                         <af:popup childCreation="deferred" autoCancel="disabled" id="p1" contentDelivery="lazyUncached"
@@ -102,86 +105,47 @@
                             </af:dialog>
                         </af:popup>
                     </af:panelGroupLayout>
-                    <af:panelGroupLayout id="pgl1">
-                        <af:panelHeader text="Bidding History" id="ph2">
-                            <af:table rows="#{bindings.G4BidVO2.rangeSize}" fetchSize="#{bindings.G4BidVO2.rangeSize}"
-                                      emptyText="#{bindings.G4BidVO2.viewable ? 'No data to display.' : 'Access Denied.'}"
-                                      var="row" value="#{bindings.G4BidVO2.collectionModel}" rowBandingInterval="0"
-                                      selectedRowKeys="#{bindings.G4BidVO2.collectionModel.selectedRow}"
-                                      selectionListener="#{bindings.G4BidVO2.collectionModel.makeCurrent}"
-                                      rowSelection="single" id="t1" partialTriggers="::b1">
-                                <af:column headerText="#{bindings.G4BidVO2.hints.Bidid.label}"
-                                           sortProperty="#{bindings.G4BidVO2.hints.Bidid.name}" sortable="false"
-                                           id="c21">
-                                    <af:outputText value="#{row.Bidid}"
-                                                   shortDesc="#{bindings.G4BidVO2.hints.Bidid.tooltip}" id="ot21">
-                                        <af:convertNumber groupingUsed="false"
-                                                          pattern="#{bindings.G4BidVO2.hints.Bidid.format}"/>
-                                    </af:outputText>
-                                </af:column>
-                                <af:column headerText="#{bindings.G4BidVO2.hints.Bidderid.label}"
-                                           sortProperty="#{bindings.G4BidVO2.hints.Bidderid.name}" sortable="false"
-                                           id="c22">
-                                    <af:outputText value="#{row.Bidderid}"
-                                                   shortDesc="#{bindings.G4BidVO2.hints.Bidderid.tooltip}" id="ot22">
-                                        <af:convertNumber groupingUsed="false"
-                                                          pattern="#{bindings.G4BidVO2.hints.Bidderid.format}"/>
-                                    </af:outputText>
-                                </af:column>
-                                <af:column headerText="#{bindings.G4BidVO2.hints.Auctionid.label}"
-                                           sortProperty="#{bindings.G4BidVO2.hints.Auctionid.name}" sortable="false"
-                                           id="c23">
-                                    <af:outputText value="#{row.Auctionid}"
-                                                   shortDesc="#{bindings.G4BidVO2.hints.Auctionid.tooltip}" id="ot23">
-                                        <af:convertNumber groupingUsed="false"
-                                                          pattern="#{bindings.G4BidVO2.hints.Auctionid.format}"/>
-                                    </af:outputText>
-                                </af:column>
-                                <af:column headerText="#{bindings.G4BidVO2.hints.Amount.label}"
-                                           sortProperty="#{bindings.G4BidVO2.hints.Amount.name}" sortable="false"
-                                           id="c24">
-                                    <af:outputText value="#{row.Amount}"
-                                                   shortDesc="#{bindings.G4BidVO2.hints.Amount.tooltip}" id="ot24">
-                                        <af:convertNumber groupingUsed="false"
-                                                          pattern="#{bindings.G4BidVO2.hints.Amount.format}"/>
-                                    </af:outputText>
-                                </af:column>
-                                <af:column headerText="#{bindings.G4BidVO2.hints.Bidtime.label}"
-                                           sortProperty="#{bindings.G4BidVO2.hints.Bidtime.name}" sortable="false"
-                                           id="c25">
-                                    <af:outputText value="#{row.Bidtime}"
-                                                   shortDesc="#{bindings.G4BidVO2.hints.Bidtime.tooltip}" id="ot25">
-                                        <af:convertDateTime pattern="#{bindings.G4BidVO2.hints.Bidtime.format}"/>
-                                    </af:outputText>
-                                </af:column>
-                                <af:column headerText="#{bindings.G4BidVO2.hints.Column1.label}"
-                                           sortProperty="#{bindings.G4BidVO2.hints.Column1.name}" sortable="false"
-                                           id="c26">
-                                    <af:outputText value="#{row.Column1}"
-                                                   shortDesc="#{bindings.G4BidVO2.hints.Column1.tooltip}" id="ot26"/>
-                                </af:column>
-                                <af:column headerText="#{bindings.G4BidVO2.hints.Column2.label}"
-                                           sortProperty="#{bindings.G4BidVO2.hints.Column2.name}" sortable="false"
-                                           id="c27">
-                                    <af:outputText value="#{row.Column2}"
-                                                   shortDesc="#{bindings.G4BidVO2.hints.Column2.tooltip}" id="ot27">
-                                        <af:convertNumber groupingUsed="false"
-                                                          pattern="#{bindings.G4BidVO2.hints.Column2.format}"/>
-                                    </af:outputText>
-                                </af:column>
-                                <af:column headerText="#{bindings.G4BidVO2.hints.Column3.label}"
-                                           sortProperty="#{bindings.G4BidVO2.hints.Column3.name}" sortable="false"
-                                           id="c28">
-                                    <af:outputText value="#{row.Column3}"
-                                                   shortDesc="#{bindings.G4BidVO2.hints.Column3.tooltip}" id="ot28"/>
-                                </af:column>
-                            </af:table>
-                        </af:panelHeader>
-                    </af:panelGroupLayout>
+                    <af:table value="#{bindings.NewBid1.collectionModel}" var="row" rows="#{bindings.NewBid1.rangeSize}"
+                              emptyText="#{bindings.NewBid1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              rowBandingInterval="0" fetchSize="#{bindings.NewBid1.rangeSize}"
+                              filterModel="#{bindings.NewBid1Query.queryDescriptor}" filterVisible="true"
+                              queryListener="#{bindings.NewBid1Query.processQuery}" varStatus="vs" id="t1">
+                        <af:column sortProperty="#{bindings.NewBid1.hints.Itemname.name}" filterable="true"
+                                   sortable="true" headerText="#{bindings.NewBid1.hints.Itemname.label}" id="c1">
+                            <af:outputText value="#{row.Itemname}"
+                                           shortDesc="#{bindings.NewBid1.hints.Itemname.tooltip}" id="ot1"/>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.NewBid1.hints.Username.name}" filterable="true"
+                                   sortable="true" headerText="#{bindings.NewBid1.hints.Username.label}" id="c2">
+                            <af:outputText value="#{row.Username}"
+                                           shortDesc="#{bindings.NewBid1.hints.Username.tooltip}" id="ot2"/>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.NewBid1.hints.Amount.name}" filterable="true"
+                                   sortable="true" headerText="#{bindings.NewBid1.hints.Amount.label}" id="c3">
+                            <af:outputText value="#{row.Amount}" shortDesc="#{bindings.NewBid1.hints.Amount.tooltip}"
+                                           id="ot3">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.NewBid1.hints.Amount.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.NewBid1.hints.Bidtime.name}" filterable="true"
+                                   sortable="true" headerText="#{bindings.NewBid1.hints.Bidtime.label}" id="c4">
+                            <f:facet name="filter">
+                                <af:inputDate value="#{bindings.NewBid1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Bidtime.value}"
+                                              id="id4">
+                                    <af:convertDateTime pattern="#{bindings.NewBid1.hints.Bidtime.format}"/>
+                                </af:inputDate>
+                            </f:facet>
+                            <af:outputText value="#{row.Bidtime}" shortDesc="#{bindings.NewBid1.hints.Bidtime.tooltip}"
+                                           id="ot4">
+                                <af:convertDateTime pattern="#{bindings.NewBid1.hints.Bidtime.format}"/>
+                            </af:outputText>
+                        </af:column>
+                    </af:table>
                 </f:facet>
                 <f:attribute name="pageTitle" value="Auction Details"/>
             </af:pageTemplate>
         </af:form>
     </af:document>
-    <!--oracle-jdev-comment:preferred-managed-bean-name:Mybean-->
+    <!--oracle-jdev-comment:preferred-managed-bean-name:newbidentry-->
 </f:view>

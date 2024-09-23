@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ViewAuctionNewVO"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.view.ViewAuctionNewVO_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewAccessor
+    Name="CategoryListVO1"
+    ViewObjectName="model.view.CategoryListVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="G4AucstatesVO1"
+    ViewObjectName="model.view.G4AucstatesVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_Categoryid"
+    ListVOName="CategoryListVO1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Categoryid"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Categoryid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Categoryname"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Auctionstate"
+    ListVOName="G4AucstatesVO1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Auctionstate"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Stateid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Statename"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <SQLQuery><![CDATA[SELECT DISTINCT
+       G4AuctionEO.AUCTIONID, 
+       G4AuctionEO.BUYERID, 
+       G4AuctionEO.CREATEDON, 
+       G4AuctionEO.CREATORID, 
+       G4AuctionEO.CURRENTPRICE, 
+       G4AuctionEO.DESCRIPTION, 
+       G4AuctionEO.ENDTIME, 
+       G4AuctionEO.IMAGE, 
+       G4AuctionEO.ITEMNAME, 
+       G4AuctionEO.STARTPRICE, 
+       G4AuctionEO.STARTTIME, 
+       G4CategoryEO.CATEGORYNAME, 
+       G4CategoryEO.CATEGORYID, 
+       G4UsersEO.USERNAME, 
+       G4UsersEO.USERID, 
+       G4UsersEO1.USERNAME AS USERNAME1, 
+       G4UsersEO1.USERID AS USERID1, 
+       G4AuctionEO.CATEGORYID AS CATEGORYID1, 
+       G4AuctionEO.CREATORID AS CREATORID1, 
+       G4AuctionEO.AUCTIONSTATE, 
+       G4AucstatesEO.STATENAME, 
+       G4AucstatesEO.STATEID
+FROM   G4_AUCTION G4AuctionEO
+       INNER JOIN G4_AUCSTATES G4AucstatesEO ON G4AuctionEO.AUCTIONSTATE = G4AucstatesEO.STATEID
+       INNER JOIN G4_CATEGORY G4CategoryEO ON G4AuctionEO.CATEGORYID = G4CategoryEO.CATEGORYID
+       INNER JOIN G4_USERS G4UsersEO ON G4AuctionEO.CREATORID = G4UsersEO.USERID
+       LEFT JOIN G4_USERS G4UsersEO1 ON G4AuctionEO.BUYERID = G4UsersEO1.USERID]]></SQLQuery>
+  <EntityUsage
+    Name="G4AuctionEO"
+    Entity="model.entity.G4AuctionEO"/>
+  <EntityUsage
+    Name="G4AucstatesEO"
+    Entity="model.entity.G4AucstatesEO"
+    Association="model.entity.AuctionAuctionState"
+    AssociationEnd="model.entity.AuctionAuctionState.G4AucstatesEO"
+    SourceUsage="model.view.ViewAuctionNewVO.G4AuctionEO"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="INNER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.entity.G4AucstatesEO.Stateid"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.entity.G4AuctionEO.Auctionstate"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="G4CategoryEO"
+    Entity="model.entity.G4CategoryEO"
+    Association="model.entity.AuctionCategoryAssoc"
+    AssociationEnd="model.entity.AuctionCategoryAssoc.G4CategoryEO"
+    SourceUsage="model.view.ViewAuctionNewVO.G4AuctionEO"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="INNER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.entity.G4CategoryEO.Categoryid"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.entity.G4AuctionEO.Categoryid"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="G4UsersEO"
+    Entity="model.entity.G4UsersEO"
+    Association="model.entity.G4AuctionFk2Assoc"
+    AssociationEnd="model.entity.G4AuctionFk2Assoc.G4UsersEO"
+    SourceUsage="model.view.ViewAuctionNewVO.G4AuctionEO"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="INNER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.entity.G4UsersEO.Userid"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.entity.G4AuctionEO.Creatorid"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="G4UsersEO1"
+    Entity="model.entity.G4UsersEO"
+    Association="model.entity.G4AuctionFk1Assoc"
+    AssociationEnd="model.entity.G4AuctionFk1Assoc.G4UsersEO1"
+    SourceUsage="model.view.ViewAuctionNewVO.G4AuctionEO"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="INNER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.entity.G4UsersEO.Userid"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.entity.G4AuctionEO.Buyerid"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <ViewAttribute
+    Name="Auctionid"
+    PrecisionRule="true"
+    EntityAttrName="Auctionid"
+    EntityUsage="G4AuctionEO"
+    AliasName="AUCTIONID"/>
+  <ViewAttribute
+    Name="Buyerid"
+    PrecisionRule="true"
+    EntityAttrName="Buyerid"
+    EntityUsage="G4AuctionEO"
+    AliasName="BUYERID"/>
+  <ViewAttribute
+    Name="Createdon"
+    PrecisionRule="true"
+    EntityAttrName="Createdon"
+    EntityUsage="G4AuctionEO"
+    AliasName="CREATEDON"/>
+  <ViewAttribute
+    Name="Creatorid"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Creatorid"
+    EntityUsage="G4AuctionEO"
+    AliasName="CREATORID"/>
+  <ViewAttribute
+    Name="Currentprice"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Currentprice"
+    EntityUsage="G4AuctionEO"
+    AliasName="CURRENTPRICE"/>
+  <ViewAttribute
+    Name="Description"
+    PrecisionRule="true"
+    EntityAttrName="Description"
+    EntityUsage="G4AuctionEO"
+    AliasName="DESCRIPTION"/>
+  <ViewAttribute
+    Name="Endtime"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Endtime"
+    EntityUsage="G4AuctionEO"
+    AliasName="ENDTIME"/>
+  <ViewAttribute
+    Name="Image"
+    IsQueriable="false"
+    PrecisionRule="true"
+    EntityAttrName="Image"
+    EntityUsage="G4AuctionEO"
+    AliasName="IMAGE"/>
+  <ViewAttribute
+    Name="Itemname"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Itemname"
+    EntityUsage="G4AuctionEO"
+    AliasName="ITEMNAME"/>
+  <ViewAttribute
+    Name="Startprice"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Startprice"
+    EntityUsage="G4AuctionEO"
+    AliasName="STARTPRICE"/>
+  <ViewAttribute
+    Name="Starttime"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Starttime"
+    EntityUsage="G4AuctionEO"
+    AliasName="STARTTIME"/>
+  <ViewAttribute
+    Name="Categoryname"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Categoryname"
+    EntityUsage="G4CategoryEO"
+    AliasName="CATEGORYNAME"/>
+  <ViewAttribute
+    Name="Categoryid"
+    PrecisionRule="true"
+    EntityAttrName="Categoryid"
+    EntityUsage="G4CategoryEO"
+    AliasName="CATEGORYID"
+    LOVName="LOV_Categoryid">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Username"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Username"
+    EntityUsage="G4UsersEO"
+    AliasName="USERNAME"/>
+  <ViewAttribute
+    Name="Userid"
+    PrecisionRule="true"
+    EntityAttrName="Userid"
+    EntityUsage="G4UsersEO"
+    AliasName="USERID"/>
+  <ViewAttribute
+    Name="Username1"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Username"
+    EntityUsage="G4UsersEO1"
+    AliasName="USERNAME1"/>
+  <ViewAttribute
+    Name="Userid1"
+    PrecisionRule="true"
+    EntityAttrName="Userid"
+    EntityUsage="G4UsersEO1"
+    AliasName="USERID1"/>
+  <ViewAttribute
+    Name="Categoryid1"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Categoryid"
+    EntityUsage="G4AuctionEO"
+    AliasName="CATEGORYID1"/>
+  <ViewAttribute
+    Name="Creatorid1"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Creatorid"
+    EntityUsage="G4AuctionEO"
+    AliasName="CREATORID1"/>
+  <ViewAttribute
+    Name="Auctionstate"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Auctionstate"
+    EntityUsage="G4AuctionEO"
+    AliasName="AUCTIONSTATE"
+    LOVName="LOV_Auctionstate">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Statename"
+    PrecisionRule="true"
+    EntityAttrName="Statename"
+    EntityUsage="G4AucstatesEO"
+    AliasName="STATENAME"/>
+  <ViewAttribute
+    Name="Stateid"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Stateid"
+    EntityUsage="G4AucstatesEO"
+    AliasName="STATEID"/>
+  <ViewCriteria
+    Name="ViewAuctionNewVOCriteria"
+    ViewObjectName="model.view.ViewAuctionNewVO"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="false"/>
+        <Property
+          Name="showInList"
+          Value="false"/>
+        <Property
+          Name="displayOperators"
+          Value="Never"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="ViewAuctionNewVOCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="Currentprice"
+        ViewAttribute="Currentprice"
+        Operator="BETWEEN"
+        Conjunction="AND"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="Itemname"
+        ViewAttribute="Itemname"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="Categoryid"
+        ViewAttribute="Categoryid"
+        Operator="="
+        Conjunction="AND"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="Auctionstate"
+        ViewAttribute="Auctionstate"
+        Operator="="
+        Conjunction="AND"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="Auctionid"/>
+  </AttrArray>
+  <ViewLinkAccessor
+    Name="NewBidVO"
+    ViewLink="model.view.NewAuctionBidLINK"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="G4AuctionVO2"
+    ViewLink="model.view.NewAuctionAuctionLink"
+    Type="oracle.jbo.server.ViewRowImpl"
+    IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>
