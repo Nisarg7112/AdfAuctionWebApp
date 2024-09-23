@@ -46,14 +46,29 @@
                         <af:inputDate value="#{bindings.Starttime.inputValue}" label="#{bindings.Starttime.hints.label}"
                                       required="#{bindings.Starttime.hints.mandatory}"
                                       columns="#{bindings.Starttime.hints.displayWidth}"
-                                      shortDesc="#{bindings.Starttime.hints.tooltip}" id="id2">
+                                      shortDesc="#{bindings.Starttime.hints.tooltip}" id="id2"
+                                     
+                                      
+                                    >
                             <f:validator binding="#{bindings.Starttime.validator}"/>
-                            <af:convertDateTime pattern="#{bindings.Starttime.format}"/>
+                            <af:convertDateTime pattern="MM-dd-yyyy "/>
+                        </af:inputDate>
+                         <af:inputDate value="#{bindings.Starttime.inputValue}" label="#{bindings.Starttime.hints.label}"
+                                      required="#{bindings.Starttime.hints.mandatory}"
+                                      columns="#{bindings.Starttime.hints.displayWidth}"
+                                      shortDesc="#{bindings.Starttime.hints.tooltip}" id="id8"
+                                     
+                                      
+                                    >
+                            <f:validator binding="#{bindings.Starttime.validator}"/>
+                            <af:convertDateTime pattern="HH:mm:ss"/>
                         </af:inputDate>
                         <af:inputDate value="#{bindings.Endtime.inputValue}" label="#{bindings.Endtime.hints.label}"
                                       required="#{bindings.Endtime.hints.mandatory}"
                                       columns="#{bindings.Endtime.hints.displayWidth}"
-                                      shortDesc="#{bindings.Endtime.hints.tooltip}" id="id3">
+                                      shortDesc="#{bindings.Endtime.hints.tooltip}" id="id3"
+                                     
+                                      >
                             <f:validator binding="#{bindings.Endtime.validator}"/>
                             <af:convertDateTime pattern="#{bindings.Endtime.format}"/>
                         </af:inputDate>
@@ -105,43 +120,6 @@
                             </af:dialog>
                         </af:popup>
                     </af:panelGroupLayout>
-                    <af:table value="#{bindings.NewBid1.collectionModel}" var="row" rows="#{bindings.NewBid1.rangeSize}"
-                              emptyText="#{bindings.NewBid1.viewable ? 'No data to display.' : 'Access Denied.'}"
-                              rowBandingInterval="0" fetchSize="#{bindings.NewBid1.rangeSize}"
-                              filterModel="#{bindings.NewBid1Query.queryDescriptor}" filterVisible="true"
-                              queryListener="#{bindings.NewBid1Query.processQuery}" varStatus="vs" id="t1">
-                        <af:column sortProperty="#{bindings.NewBid1.hints.Itemname.name}" filterable="true"
-                                   sortable="true" headerText="#{bindings.NewBid1.hints.Itemname.label}" id="c1">
-                            <af:outputText value="#{row.Itemname}"
-                                           shortDesc="#{bindings.NewBid1.hints.Itemname.tooltip}" id="ot1"/>
-                        </af:column>
-                        <af:column sortProperty="#{bindings.NewBid1.hints.Username.name}" filterable="true"
-                                   sortable="true" headerText="#{bindings.NewBid1.hints.Username.label}" id="c2">
-                            <af:outputText value="#{row.Username}"
-                                           shortDesc="#{bindings.NewBid1.hints.Username.tooltip}" id="ot2"/>
-                        </af:column>
-                        <af:column sortProperty="#{bindings.NewBid1.hints.Amount.name}" filterable="true"
-                                   sortable="true" headerText="#{bindings.NewBid1.hints.Amount.label}" id="c3">
-                            <af:outputText value="#{row.Amount}" shortDesc="#{bindings.NewBid1.hints.Amount.tooltip}"
-                                           id="ot3">
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.NewBid1.hints.Amount.format}"/>
-                            </af:outputText>
-                        </af:column>
-                        <af:column sortProperty="#{bindings.NewBid1.hints.Bidtime.name}" filterable="true"
-                                   sortable="true" headerText="#{bindings.NewBid1.hints.Bidtime.label}" id="c4">
-                            <f:facet name="filter">
-                                <af:inputDate value="#{bindings.NewBid1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Bidtime.value}"
-                                              id="id4">
-                                    <af:convertDateTime pattern="#{bindings.NewBid1.hints.Bidtime.format}"/>
-                                </af:inputDate>
-                            </f:facet>
-                            <af:outputText value="#{row.Bidtime}" shortDesc="#{bindings.NewBid1.hints.Bidtime.tooltip}"
-                                           id="ot4">
-                                <af:convertDateTime pattern="#{bindings.NewBid1.hints.Bidtime.format}"/>
-                            </af:outputText>
-                        </af:column>
-                    </af:table>
                 </f:facet>
                 <f:attribute name="pageTitle" value="Auction Details"/>
             </af:pageTemplate>
