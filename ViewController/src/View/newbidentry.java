@@ -32,6 +32,7 @@ import oracle.jbo.Row;
 import oracle.jbo.ViewObject;
 
 import org.apache.myfaces.trinidad.event.AttributeChangeEvent;
+import view.MyADFUtil;
 
 @ManagedBean
 @SessionScoped
@@ -64,7 +65,7 @@ public class newbidentry extends LoggedUserHelper{
            op.execute();
        }
 
-    public String OKentrybid(){
+    public void OKentrybid(){
        //  Add event code here...
        
        
@@ -97,6 +98,7 @@ public class newbidentry extends LoggedUserHelper{
                                     AuctionVo.setCurrentRow(auction);
                                     BidVO.insertRow(newBid);
                                     am.getTransaction().commit();
+                                    MyADFUtil.showSuccessfulMessage("Bid has been recorded");
                                     
                                 } catch (Exception er) {
                                     er.printStackTrace();
@@ -106,7 +108,7 @@ public class newbidentry extends LoggedUserHelper{
         
         RichPopup popup  = getMyPopup();
         popup.hide();
-        return null;
+        
     }
 
     public void setMyPopup(RichPopup myPopup) {
